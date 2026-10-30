@@ -1,0 +1,300 @@
+2026-10-30 00:30:48,821 INFO: Using default value thread_stack_size = 524288
+2026-10-30 00:30:48,828 INFO: Patroni global thread_pool_size = 5
+2026-10-30 00:30:48,837 INFO: Connecting to zoo(192.168.117.4):2181, use_ssl: False
+2026-10-30 00:30:48,840 INFO: Zookeeper connection established, state: CONNECTED
+2026-10-30 00:30:48,850 INFO: No PostgreSQL configuration items changed, nothing to reload.
+2026-10-30 00:30:48,852 INFO: REST API thread_pool_size = 5
+2026-10-30 00:30:48,860 WARNING: Postgresql is not running.
+2026-10-30 00:30:48,860 INFO: Lock owner: None; I am postgresql1
+2026-10-30 00:30:48,860 INFO: pg_controldata:
+  pg_control version number: 1300
+  Catalog version number: 202209061
+  Database system identifier: 7702251532100730913
+  Database cluster state: shut down
+  pg_control last modified: Fri Oct 30 00:30:45 2026
+  Latest checkpoint location: 0/4000028
+  Latest checkpoint's REDO location: 0/4000028
+  Latest checkpoint's REDO WAL file: 000000010000000000000004
+  Latest checkpoint's TimeLineID: 1
+  Latest checkpoint's PrevTimeLineID: 1
+  Latest checkpoint's full_page_writes: on
+  Latest checkpoint's NextXID: 0:731
+  Latest checkpoint's NextOID: 16395
+  Latest checkpoint's NextMultiXactId: 1
+  Latest checkpoint's NextMultiOffset: 0
+  Latest checkpoint's oldestXID: 717
+  Latest checkpoint's oldestXID's DB: 1
+  Latest checkpoint's oldestActiveXID: 0
+  Latest checkpoint's oldestMultiXid: 1
+  Latest checkpoint's oldestMulti's DB: 1
+  Latest checkpoint's oldestCommitTsXid: 0
+  Latest checkpoint's newestCommitTsXid: 0
+  Time of latest checkpoint: Fri Oct 30 00:30:45 2026
+  Fake LSN counter for unlogged rels: 0/3E8
+  Minimum recovery ending location: 0/0
+  Min recovery ending loc's timeline: 0
+  Backup start location: 0/0
+  Backup end location: 0/0
+  End-of-backup record required: no
+  wal_level setting: replica
+  wal_log_hints setting: on
+  max_connections setting: 100
+  max_worker_processes setting: 8
+  max_wal_senders setting: 10
+  max_prepared_xacts setting: 0
+  max_locks_per_xact setting: 64
+  track_commit_timestamp setting: off
+  Maximum data alignment: 8
+  Database block size: 8192
+  Blocks per segment of large relation: 131072
+  WAL block size: 8192
+  Bytes per WAL segment: 16777216
+  Maximum length of identifiers: 64
+  Maximum columns in an index: 32
+  Maximum size of a TOAST chunk: 1996
+  Size of a large-object chunk: 2048
+  Date/time type storage: 64-bit integers
+  Float8 argument passing: by value
+  Data page checksum version: 0
+  Mock authentication nonce: 55079be318befb2bea7feb61ed3ee8176df94628e80a16754dbcf5e12a237329
+
+2026-10-30 00:30:48,867 INFO: Lock owner: None; I am postgresql1
+2026-10-30 00:30:48,867 WARNING: Recreating the member ZNode due to ownership mismatch
+2026-10-30 00:30:48,875 INFO: starting as a secondary
+2026-10-30 00:30:49.044 UTC [34] LOG:  starting PostgreSQL 15.19 (Debian 15.19-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-10-30 00:30:49.044 UTC [34] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-10-30 00:30:49.049 UTC [34] LOG:  listening on Unix socket "./.s.PGSQL.5432"
+2026-10-30 00:30:49.057 UTC [37] LOG:  database system was shut down at 2026-10-30 00:30:45 UTC
+2026-10-30 00:30:49,057 INFO: postmaster pid=34
+2026-10-30 00:30:49.058 UTC [37] WARNING:  specified neither primary_conninfo nor restore_command
+2026-10-30 00:30:49.058 UTC [37] HINT:  The database server will regularly poll the pg_wal subdirectory to check for files placed there.
+2026-10-30 00:30:49.058 UTC [37] LOG:  entering standby mode
+2026-10-30 00:30:49.060 UTC [37] LOG:  consistent recovery state reached at 0/40000A0
+2026-10-30 00:30:49.060 UTC [39] FATAL:  the database system is starting up
+2026-10-30 00:30:49.060 UTC [37] LOG:  invalid record length at 0/40000A0: wanted 24, got 0
+2026-10-30 00:30:49.060 UTC [37] LOG:  waiting for WAL to become available at 0/40000B8
+localhost:5432 - rejecting connections
+2026-10-30 00:30:49.060 UTC [34] LOG:  database system is ready to accept read-only connections
+localhost:5432 - accepting connections
+2026-10-30 00:30:49,069 INFO: establishing a new patroni heartbeat connection to postgres
+2026-10-30 00:30:49,080 INFO: establishing a new patroni restapi connection to postgres
+2026-10-30 00:30:49,080 INFO: Got response from postgresql0 http://pg-master:8008/patroni: {"state": "running", "postmaster_start_time": "2026-10-30 00:30:49.053225+00:00", "role": "replica", "server_version": 150019, "xlog": {"received_location": 67109024, "replayed_location": 67109024, "replayed_timestamp": null, "paused": false}, "sync_standby": true, "timeline": 1, "cluster_unlocked": true, "dcs_last_seen": 1793320249, "database_system_identifier": "7702251532100730913", "patroni": {"version": "4.1.5", "scope": "my_cluster", "name": "postgresql0"}}
+2026-10-30 00:30:49,095 INFO: promoted self to leader by acquiring session lock
+server promoting
+2026-10-30 00:30:49.096 UTC [37] LOG:  received promote request
+2026-10-30 00:30:49.096 UTC [37] LOG:  redo is not required
+2026-10-30 00:30:49.098 UTC [37] LOG:  selected new timeline ID: 2
+2026-10-30 00:30:49.124 UTC [37] LOG:  archive recovery complete
+2026-10-30 00:30:49.130 UTC [35] LOG:  checkpoint starting: force
+2026-10-30 00:30:49.131 UTC [34] LOG:  database system is ready to accept connections
+2026-10-30 00:30:49.154 UTC [35] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.006 s, total=0.024 s; sync files=2, longest=0.004 s, average=0.003 s; distance=0 kB, estimate=0 kB
+2026-10-30 00:30:50,114 INFO: Lock owner: postgresql1; I am postgresql1
+2026-10-30 00:30:50,129 INFO: Assigning synchronous standby status to ['postgresql0']
+2026-10-30 00:30:50.131 UTC [34] LOG:  received SIGHUP, reloading configuration files
+server signaled
+2026-10-30 00:30:50.132 UTC [34] LOG:  parameter "synchronous_standby_names" changed to "postgresql0"
+2026-10-30 00:30:50.344 UTC [50] LOG:  standby "postgresql0" is now a synchronous standby with priority 1
+2026-10-30 00:30:50.344 UTC [50] STATEMENT:  START_REPLICATION SLOT "postgresql0" 0/4000000 TIMELINE 2
+2026-10-30 00:30:52,266 INFO: Synchronous standby status assigned to ['postgresql0']
+2026-10-30 00:30:52,278 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:31:00,126 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:31:06.853 UTC [34] LOG:  received fast shutdown request
+2026-10-30 00:31:06.857 UTC [34] LOG:  aborting any active transactions
+2026-10-30 00:31:06.857 UTC [45] FATAL:  terminating connection due to administrator command
+2026-10-30 00:31:06.858 UTC [43] FATAL:  terminating connection due to administrator command
+2026-10-30 00:31:06.862 UTC [34] LOG:  background worker "logical replication launcher" (PID 59) exited with exit code 1
+2026-10-30 00:31:06.863 UTC [35] LOG:  shutting down
+2026-10-30 00:31:06.921 UTC [35] LOG:  checkpoint starting: shutdown immediate
+2026-10-30 00:31:06.969 UTC [35] LOG:  checkpoint complete: wrote 1 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.002 s, total=0.052 s; sync files=1, longest=0.002 s, average=0.002 s; distance=16383 kB, estimate=16383 kB
+2026-10-30 00:31:06.991 UTC [34] LOG:  database system is shut down
+2026-10-30 00:31:07,874 INFO: Closing connection to zoo:2181
+2026-10-30 00:31:07,874 INFO: Zookeeper session closed, state: CLOSED
+2026-10-30 00:31:07,875 INFO: Connecting to zoo(192.168.117.4):2181, use_ssl: False
+2026-10-30 00:31:07,878 INFO: Zookeeper connection established, state: CONNECTED
+2026-10-30 00:31:07,879 WARNING: Recreating the member ZNode due to ownership mismatch
+2026-10-30 00:31:32,818 INFO: Using default value thread_stack_size = 524288
+2026-10-30 00:31:32,826 INFO: Patroni global thread_pool_size = 5
+2026-10-30 00:31:32,835 INFO: Connecting to zoo(192.168.117.4):2181, use_ssl: False
+2026-10-30 00:31:32,838 INFO: Zookeeper connection established, state: CONNECTED
+2026-10-30 00:31:32,842 INFO: No PostgreSQL configuration items changed, nothing to reload.
+2026-10-30 00:31:32,844 INFO: REST API thread_pool_size = 5
+2026-10-30 00:31:32,848 WARNING: Postgresql is not running.
+2026-10-30 00:31:32,848 INFO: Lock owner: postgresql0; I am postgresql1
+2026-10-30 00:31:32,848 INFO: pg_controldata:
+  pg_control version number: 1300
+  Catalog version number: 202209061
+  Database system identifier: 7702251532100730913
+  Database cluster state: shut down
+  pg_control last modified: Fri Oct 30 00:31:06 2026
+  Latest checkpoint location: 0/5000028
+  Latest checkpoint's REDO location: 0/5000028
+  Latest checkpoint's REDO WAL file: 000000020000000000000005
+  Latest checkpoint's TimeLineID: 2
+  Latest checkpoint's PrevTimeLineID: 2
+  Latest checkpoint's full_page_writes: on
+  Latest checkpoint's NextXID: 0:732
+  Latest checkpoint's NextOID: 16395
+  Latest checkpoint's NextMultiXactId: 1
+  Latest checkpoint's NextMultiOffset: 0
+  Latest checkpoint's oldestXID: 717
+  Latest checkpoint's oldestXID's DB: 1
+  Latest checkpoint's oldestActiveXID: 0
+  Latest checkpoint's oldestMultiXid: 1
+  Latest checkpoint's oldestMulti's DB: 1
+  Latest checkpoint's oldestCommitTsXid: 0
+  Latest checkpoint's newestCommitTsXid: 0
+  Time of latest checkpoint: Fri Oct 30 00:31:06 2026
+  Fake LSN counter for unlogged rels: 0/3E8
+  Minimum recovery ending location: 0/0
+  Min recovery ending loc's timeline: 0
+  Backup start location: 0/0
+  Backup end location: 0/0
+  End-of-backup record required: no
+  wal_level setting: replica
+  wal_log_hints setting: on
+  max_connections setting: 100
+  max_worker_processes setting: 8
+  max_wal_senders setting: 10
+  max_prepared_xacts setting: 0
+  max_locks_per_xact setting: 64
+  track_commit_timestamp setting: off
+  Maximum data alignment: 8
+  Database block size: 8192
+  Blocks per segment of large relation: 131072
+  WAL block size: 8192
+  Bytes per WAL segment: 16777216
+  Maximum length of identifiers: 64
+  Maximum columns in an index: 32
+  Maximum size of a TOAST chunk: 1996
+  Size of a large-object chunk: 2048
+  Date/time type storage: 64-bit integers
+  Float8 argument passing: by value
+  Data page checksum version: 0
+  Mock authentication nonce: 55079be318befb2bea7feb61ed3ee8176df94628e80a16754dbcf5e12a237329
+
+2026-10-30 00:31:32,852 INFO: Lock owner: postgresql0; I am postgresql1
+2026-10-30 00:31:32,855 INFO: Local timeline=2 lsn=0/5000028
+2026-10-30 00:31:32,867 INFO: primary_timeline=3
+2026-10-30 00:31:32,869 INFO: primary: history=1	0/40000A0	no recovery target specified
+2	0/50000A0	no recovery target specified
+2026-10-30 00:31:32,869 INFO: Lock owner: postgresql0; I am postgresql1
+2026-10-30 00:31:32,869 WARNING: Recreating the member ZNode due to ownership mismatch
+2026-10-30 00:31:32,876 INFO: starting as a secondary
+2026-10-30 00:31:33,063 INFO: postmaster pid=36
+2026-10-30 00:31:33.063 UTC [36] LOG:  starting PostgreSQL 15.19 (Debian 15.19-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-10-30 00:31:33.063 UTC [36] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-10-30 00:31:33.066 UTC [36] LOG:  listening on Unix socket "./.s.PGSQL.5432"
+2026-10-30 00:31:33.071 UTC [40] LOG:  database system was shut down at 2026-10-30 00:31:06 UTC
+2026-10-30 00:31:33.071 UTC [41] FATAL:  the database system is starting up
+localhost:5432 - rejecting connections
+2026-10-30 00:31:33.072 UTC [40] LOG:  entering standby mode
+2026-10-30 00:31:33.074 UTC [43] FATAL:  the database system is starting up
+localhost:5432 - rejecting connections
+2026-10-30 00:31:33.074 UTC [40] LOG:  consistent recovery state reached at 0/50000A0
+2026-10-30 00:31:33.074 UTC [40] LOG:  invalid record length at 0/50000A0: wanted 24, got 0
+2026-10-30 00:31:33.074 UTC [36] LOG:  database system is ready to accept read-only connections
+2026-10-30 00:31:33.081 UTC [45] LOG:  fetching timeline history file for timeline 3 from primary server
+2026-10-30 00:31:33.087 UTC [45] LOG:  started streaming WAL from primary at 0/5000000 on timeline 2
+2026-10-30 00:31:33.087 UTC [45] LOG:  replication terminated by primary server
+2026-10-30 00:31:33.087 UTC [45] DETAIL:  End of WAL reached on timeline 2 at 0/50000A0.
+2026-10-30 00:31:33.087 UTC [40] LOG:  new target timeline is 3
+2026-10-30 00:31:33.087 UTC [45] LOG:  restarted WAL streaming at 0/5000000 on timeline 3
+2026-10-30 00:31:33.108 UTC [40] LOG:  redo starts at 0/50000A0
+2026-10-30 00:31:33,411 INFO: establishing a new patroni heartbeat connection to postgres
+2026-10-30 00:31:33,424 INFO: establishing a new patroni restapi connection to postgres
+localhost:5432 - accepting connections
+2026-10-30 00:31:34,120 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
+2026-10-30 00:31:44,123 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
+2026-10-30 00:31:54,121 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
+2026-10-30 00:32:01.831 UTC [57] ERROR:  cannot execute INSERT in a read-only transaction
+2026-10-30 00:32:01.831 UTC [57] STATEMENT:  INSERT INTO lab_users (login, note) VALUES ('x', 'y');
+2026-10-30 00:32:04.014 UTC [45] FATAL:  could not receive data from WAL stream: server closed the connection unexpectedly
+		This probably means the server terminated abnormally
+		before or while processing the request.
+2026-10-30 00:32:04.014 UTC [40] LOG:  invalid record length at 0/5005C18: wanted 24, got 0
+2026-10-30 00:32:04.017 UTC [67] FATAL:  could not connect to the primary server: connection to server at "pg-master" (192.168.117.3), port 5432 failed: Connection refused
+		Is the server running on that host and accepting TCP/IP connections?
+2026-10-30 00:32:04.017 UTC [40] LOG:  waiting for WAL to become available at 0/5005C30
+2026-10-30 00:32:04,104 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
+2026-10-30 00:32:09.026 UTC [68] FATAL:  could not connect to the primary server: could not translate host name "pg-master" to address: Name or service not known
+2026-10-30 00:32:09.026 UTC [40] LOG:  waiting for WAL to become available at 0/5005C30
+2026-10-30 00:32:14.031 UTC [69] FATAL:  could not connect to the primary server: could not translate host name "pg-master" to address: Name or service not known
+2026-10-30 00:32:14.031 UTC [40] LOG:  waiting for WAL to become available at 0/5005C30
+2026-10-30 00:32:14,109 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
+2026-10-30 00:32:19.036 UTC [70] FATAL:  could not connect to the primary server: could not translate host name "pg-master" to address: Name or service not known
+2026-10-30 00:32:19.037 UTC [40] LOG:  waiting for WAL to become available at 0/5005C30
+2026-10-30 00:32:24.037 UTC [71] FATAL:  could not connect to the primary server: could not translate host name "pg-master" to address: Name or service not known
+2026-10-30 00:32:24.037 UTC [40] LOG:  waiting for WAL to become available at 0/5005C30
+2026-10-30 00:32:24,108 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
+2026-10-30 00:32:29.045 UTC [72] FATAL:  could not connect to the primary server: could not translate host name "pg-master" to address: Name or service not known
+2026-10-30 00:32:29.045 UTC [40] LOG:  waiting for WAL to become available at 0/5005C30
+2026-10-30 00:32:34.055 UTC [73] FATAL:  could not connect to the primary server: could not translate host name "pg-master" to address: Name or service not known
+2026-10-30 00:32:34.055 UTC [40] LOG:  waiting for WAL to become available at 0/5005C30
+2026-10-30 00:32:34,109 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
+2026-10-30 00:32:34,834 WARNING: Request failed to postgresql0: GET http://pg-master:8008/patroni (HTTPConnectionPool(host='pg-master', port=8008): Max retries exceeded with url: /patroni (Caused by NameResolutionError("HTTPConnection(host='pg-master', port=8008): Failed to resolve 'pg-master' ([Errno -2] Name or service not known)")))
+2026-10-30 00:32:34,850 INFO: promoted self to leader by acquiring session lock
+server promoting
+2026-10-30 00:32:34.854 UTC [40] LOG:  received promote request
+2026-10-30 00:32:34.854 UTC [40] LOG:  redo done at 0/5005BE0 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 61.74 s
+2026-10-30 00:32:34.854 UTC [40] LOG:  last completed transaction was at log time 2026-10-30 00:31:39.065374+00
+2026-10-30 00:32:34.855 UTC [40] LOG:  selected new timeline ID: 4
+2026-10-30 00:32:34.906 UTC [40] LOG:  archive recovery complete
+2026-10-30 00:32:34.915 UTC [38] LOG:  checkpoint starting: force
+2026-10-30 00:32:34.916 UTC [36] LOG:  database system is ready to accept connections
+2026-10-30 00:32:35.882 UTC [38] LOG:  checkpoint complete: wrote 12 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.929 s, sync=0.029 s, total=0.968 s; sync files=9, longest=0.011 s, average=0.004 s; distance=23 kB, estimate=23 kB
+2026-10-30 00:32:35,892 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:32:45,900 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:32:55,909 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:33:05,908 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:33:15,880 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:33:23.293 UTC [129] ERROR:  requested starting point 0/6000000 on timeline 3 is not in this server's history
+2026-10-30 00:33:23.293 UTC [129] DETAIL:  This server's history forked from timeline 3 at 0/5005C18.
+2026-10-30 00:33:23.293 UTC [129] STATEMENT:  START_REPLICATION SLOT "postgresql0" 0/6000000 TIMELINE 3
+2026-10-30 00:33:23.299 UTC [130] ERROR:  requested starting point 0/6000000 on timeline 3 is not in this server's history
+2026-10-30 00:33:23.299 UTC [130] DETAIL:  This server's history forked from timeline 3 at 0/5005C18.
+2026-10-30 00:33:23.299 UTC [130] STATEMENT:  START_REPLICATION SLOT "postgresql0" 0/6000000 TIMELINE 3
+2026-10-30 00:33:25,878 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:33:28.318 UTC [131] ERROR:  requested starting point 0/6000000 on timeline 3 is not in this server's history
+2026-10-30 00:33:28.318 UTC [131] DETAIL:  This server's history forked from timeline 3 at 0/5005C18.
+2026-10-30 00:33:28.318 UTC [131] STATEMENT:  START_REPLICATION SLOT "postgresql0" 0/6000000 TIMELINE 3
+2026-10-30 00:33:33.319 UTC [132] ERROR:  requested starting point 0/6000000 on timeline 3 is not in this server's history
+2026-10-30 00:33:33.319 UTC [132] DETAIL:  This server's history forked from timeline 3 at 0/5005C18.
+2026-10-30 00:33:33.319 UTC [132] STATEMENT:  START_REPLICATION SLOT "postgresql0" 0/6000000 TIMELINE 3
+2026-10-30 00:33:35.575 UTC [137] ERROR:  could not open file ".s.PGSQL.5432" for reading: No such device or address
+2026-10-30 00:33:35.575 UTC [137] STATEMENT:  SELECT path, begin,
+	  pg_read_binary_file(path, begin, len, true) AS chunk
+	FROM unnest ($1::text[], $2::int8[], $3::int4[]) as x(path, begin, len)
+2026-10-30 00:33:35,879 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:33:45,887 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:33:55,882 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:34:05,905 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:34:15,876 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:34:25,884 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:34:35,892 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:34:45,894 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:34:55,879 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:35:05,894 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:35:15,880 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:35:25,881 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:35:35,883 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:35:45,882 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:35:55,886 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:36:05,883 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:36:15,887 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:36:25,890 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:36:35,885 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:36:45,893 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:36:55,886 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:37:05,883 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:37:15,885 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:37:25,893 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:37:34.991 UTC [38] LOG:  checkpoint starting: time
+2026-10-30 00:37:35,885 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:37:39.428 UTC [38] LOG:  checkpoint complete: wrote 42 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.400 s, sync=0.024 s, total=4.438 s; sync files=11, longest=0.006 s, average=0.003 s; distance=302 kB, estimate=302 kB
+2026-10-30 00:37:45,900 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:37:55,885 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:38:05,892 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:38:15,887 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:38:25,890 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:38:35,887 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:38:45,890 INFO: no action. I am (postgresql1), the leader with the lock

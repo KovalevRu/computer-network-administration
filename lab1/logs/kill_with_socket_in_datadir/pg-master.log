@@ -1,0 +1,1456 @@
+2026-10-30 00:30:48,827 INFO: Using default value thread_stack_size = 524288
+2026-10-30 00:30:48,833 INFO: Patroni global thread_pool_size = 5
+2026-10-30 00:30:48,841 INFO: Connecting to zoo(192.168.117.4):2181, use_ssl: False
+2026-10-30 00:30:48,845 INFO: Zookeeper connection established, state: CONNECTED
+2026-10-30 00:30:48,852 INFO: No PostgreSQL configuration items changed, nothing to reload.
+2026-10-30 00:30:48,853 INFO: REST API thread_pool_size = 5
+2026-10-30 00:30:48,861 WARNING: Postgresql is not running.
+2026-10-30 00:30:48,861 INFO: Lock owner: None; I am postgresql0
+2026-10-30 00:30:48,861 INFO: pg_controldata:
+  pg_control version number: 1300
+  Catalog version number: 202209061
+  Database system identifier: 7702251532100730913
+  Database cluster state: shut down in recovery
+  pg_control last modified: Fri Oct 30 00:30:47 2026
+  Latest checkpoint location: 0/4000028
+  Latest checkpoint's REDO location: 0/4000028
+  Latest checkpoint's REDO WAL file: 000000010000000000000004
+  Latest checkpoint's TimeLineID: 1
+  Latest checkpoint's PrevTimeLineID: 1
+  Latest checkpoint's full_page_writes: on
+  Latest checkpoint's NextXID: 0:731
+  Latest checkpoint's NextOID: 16395
+  Latest checkpoint's NextMultiXactId: 1
+  Latest checkpoint's NextMultiOffset: 0
+  Latest checkpoint's oldestXID: 717
+  Latest checkpoint's oldestXID's DB: 1
+  Latest checkpoint's oldestActiveXID: 0
+  Latest checkpoint's oldestMultiXid: 1
+  Latest checkpoint's oldestMulti's DB: 1
+  Latest checkpoint's oldestCommitTsXid: 0
+  Latest checkpoint's newestCommitTsXid: 0
+  Time of latest checkpoint: Fri Oct 30 00:30:45 2026
+  Fake LSN counter for unlogged rels: 0/3E8
+  Minimum recovery ending location: 0/40000A0
+  Min recovery ending loc's timeline: 1
+  Backup start location: 0/0
+  Backup end location: 0/0
+  End-of-backup record required: no
+  wal_level setting: replica
+  wal_log_hints setting: on
+  max_connections setting: 100
+  max_worker_processes setting: 8
+  max_wal_senders setting: 10
+  max_prepared_xacts setting: 0
+  max_locks_per_xact setting: 64
+  track_commit_timestamp setting: off
+  Maximum data alignment: 8
+  Database block size: 8192
+  Blocks per segment of large relation: 131072
+  WAL block size: 8192
+  Bytes per WAL segment: 16777216
+  Maximum length of identifiers: 64
+  Maximum columns in an index: 32
+  Maximum size of a TOAST chunk: 1996
+  Size of a large-object chunk: 2048
+  Date/time type storage: 64-bit integers
+  Float8 argument passing: by value
+  Data page checksum version: 0
+  Mock authentication nonce: 55079be318befb2bea7feb61ed3ee8176df94628e80a16754dbcf5e12a237329
+
+2026-10-30 00:30:48,868 INFO: Lock owner: None; I am postgresql0
+2026-10-30 00:30:48,868 WARNING: Recreating the member ZNode due to ownership mismatch
+2026-10-30 00:30:48,877 INFO: starting as a secondary
+2026-10-30 00:30:49.041 UTC [34] LOG:  starting PostgreSQL 15.19 (Debian 15.19-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-10-30 00:30:49.041 UTC [34] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-10-30 00:30:49.048 UTC [34] LOG:  listening on Unix socket "./.s.PGSQL.5432"
+2026-10-30 00:30:49.055 UTC [37] LOG:  database system was shut down in recovery at 2026-10-30 00:30:47 UTC
+2026-10-30 00:30:49,056 INFO: postmaster pid=34
+2026-10-30 00:30:49.057 UTC [37] WARNING:  specified neither primary_conninfo nor restore_command
+2026-10-30 00:30:49.057 UTC [37] HINT:  The database server will regularly poll the pg_wal subdirectory to check for files placed there.
+2026-10-30 00:30:49.057 UTC [37] LOG:  entering standby mode
+2026-10-30 00:30:49.059 UTC [37] LOG:  consistent recovery state reached at 0/40000A0
+2026-10-30 00:30:49.059 UTC [37] LOG:  invalid record length at 0/40000A0: wanted 24, got 0
+2026-10-30 00:30:49.059 UTC [37] LOG:  waiting for WAL to become available at 0/40000B8
+2026-10-30 00:30:49.059 UTC [34] LOG:  database system is ready to accept read-only connections
+localhost:5432 - accepting connections
+localhost:5432 - accepting connections
+2026-10-30 00:30:49,073 INFO: establishing a new patroni heartbeat connection to postgres
+2026-10-30 00:30:49,076 INFO: establishing a new patroni restapi connection to postgres
+2026-10-30 00:30:49,084 INFO: Got response from postgresql1 http://pg-slave:8008/patroni: {"state": "running", "postmaster_start_time": "2026-10-30 00:30:49.054098+00:00", "role": "replica", "server_version": 150019, "xlog": {"received_location": 67109024, "replayed_location": 67109024, "replayed_timestamp": null, "paused": false}, "timeline": 1, "cluster_unlocked": true, "dcs_last_seen": 1793320249, "database_system_identifier": "7702251532100730913", "patroni": {"version": "4.1.5", "scope": "my_cluster", "name": "postgresql1"}}
+2026-10-30 00:30:49,086 INFO: Could not take out TTL lock
+2026-10-30 00:30:49,092 INFO: Local timeline=1 lsn=0/40000A0
+2026-10-30 00:30:49.094 UTC [34] LOG:  received SIGHUP, reloading configuration files
+server signaled
+2026-10-30 00:30:49.095 UTC [34] LOG:  parameter "primary_conninfo" changed to "dbname=postgres user=replicator passfile=/tmp/pgpass0 host=pg-slave port=5432 sslmode=prefer application_name=postgresql0 gssencmode=prefer channel_binding=prefer"
+2026-10-30 00:30:49.095 UTC [34] LOG:  parameter "primary_slot_name" changed to "postgresql0"
+2026-10-30 00:30:49.101 UTC [50] LOG:  started streaming WAL from primary at 0/4000000 on timeline 1
+2026-10-30 00:30:49,102 INFO: following new leader after trying and failing to obtain lock
+2026-10-30 00:30:49.130 UTC [50] LOG:  replication terminated by primary server
+2026-10-30 00:30:49.130 UTC [50] DETAIL:  End of WAL reached on timeline 1 at 0/40000A0.
+2026-10-30 00:30:49.130 UTC [50] LOG:  fetching timeline history file for timeline 2 from primary server
+2026-10-30 00:30:49.134 UTC [37] LOG:  new target timeline is 2
+2026-10-30 00:30:49.135 UTC [50] LOG:  restarted WAL streaming at 0/4000000 on timeline 2
+2026-10-30 00:30:49.156 UTC [37] LOG:  redo starts at 0/40000A0
+2026-10-30 00:30:59,085 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:30:59,092 INFO: Local timeline=2 lsn=0/40001A8
+2026-10-30 00:30:59,117 INFO: primary_timeline=2
+2026-10-30 00:30:59,133 INFO: Local timeline=2 lsn=0/40001A8
+2026-10-30 00:30:59,143 INFO: primary_timeline=2
+2026-10-30 00:30:59,155 INFO: no action. I am (postgresql0), a secondary, and following a leader (postgresql1)
+2026-10-30 00:31:06.989 UTC [50] LOG:  replication terminated by primary server
+2026-10-30 00:31:06.989 UTC [50] DETAIL:  End of WAL reached on timeline 2 at 0/50000A0.
+2026-10-30 00:31:06.989 UTC [50] FATAL:  could not send end-of-streaming message to primary: server closed the connection unexpectedly
+		This probably means the server terminated abnormally
+		before or while processing the request.
+	no COPY in progress
+2026-10-30 00:31:06.989 UTC [37] LOG:  invalid record length at 0/50000A0: wanted 24, got 0
+2026-10-30 00:31:06.992 UTC [87] FATAL:  could not connect to the primary server: connection to server at "pg-slave" (192.168.117.2), port 5432 failed: Connection refused
+		Is the server running on that host and accepting TCP/IP connections?
+2026-10-30 00:31:06.992 UTC [37] LOG:  waiting for WAL to become available at 0/50000B8
+2026-10-30 00:31:07,887 WARNING: Request failed to postgresql1: GET http://pg-slave:8008/patroni (HTTPConnectionPool(host='pg-slave', port=8008): Max retries exceeded with url: /patroni (Caused by ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))))
+2026-10-30 00:31:07,915 INFO: promoted self to leader by acquiring session lock
+server promoting
+2026-10-30 00:31:07.916 UTC [37] LOG:  received promote request
+2026-10-30 00:31:07.916 UTC [37] LOG:  redo done at 0/5000028 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 18.76 s
+2026-10-30 00:31:07.916 UTC [37] LOG:  last completed transaction was at log time 2026-10-30 00:30:50.245441+00
+2026-10-30 00:31:07.918 UTC [37] LOG:  selected new timeline ID: 3
+2026-10-30 00:31:07.951 UTC [37] LOG:  archive recovery complete
+2026-10-30 00:31:07.961 UTC [35] LOG:  checkpoint starting: force
+2026-10-30 00:31:07.962 UTC [34] LOG:  database system is ready to accept connections
+2026-10-30 00:31:07.986 UTC [35] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.004 s, total=0.026 s; sync files=2, longest=0.003 s, average=0.002 s; distance=16384 kB, estimate=16384 kB
+2026-10-30 00:31:08,955 INFO: no action. I am (postgresql0), the leader with the lock
+2026-10-30 00:31:18,936 INFO: no action. I am (postgresql0), the leader with the lock
+2026-10-30 00:31:28,937 INFO: no action. I am (postgresql0), the leader with the lock
+2026-10-30 00:31:38,937 INFO: Lock owner: postgresql0; I am postgresql0
+2026-10-30 00:31:38,944 INFO: Assigning synchronous standby status to ['postgresql1']
+server signaled
+2026-10-30 00:31:38.949 UTC [34] LOG:  received SIGHUP, reloading configuration files
+2026-10-30 00:31:38.950 UTC [34] LOG:  parameter "synchronous_standby_names" changed to "postgresql1"
+2026-10-30 00:31:39.161 UTC [132] LOG:  standby "postgresql1" is now a synchronous standby with priority 1
+2026-10-30 00:31:39.161 UTC [132] STATEMENT:  START_REPLICATION SLOT "postgresql1" 0/5000000 TIMELINE 3
+2026-10-30 00:31:41,080 INFO: Synchronous standby status assigned to ['postgresql1']
+2026-10-30 00:31:41,088 INFO: no action. I am (postgresql0), the leader with the lock
+2026-10-30 00:31:48,952 INFO: no action. I am (postgresql0), the leader with the lock
+2026-10-30 00:31:58,940 INFO: no action. I am (postgresql0), the leader with the lock
+2026-10-30 00:33:22,419 INFO: Using default value thread_stack_size = 524288
+2026-10-30 00:33:22,426 INFO: Patroni global thread_pool_size = 5
+2026-10-30 00:33:22,434 INFO: Connecting to zoo(192.168.117.4):2181, use_ssl: False
+2026-10-30 00:33:22,438 INFO: Zookeeper connection established, state: CONNECTED
+2026-10-30 00:33:22,443 INFO: No PostgreSQL configuration items changed, nothing to reload.
+2026-10-30 00:33:22,445 INFO: REST API thread_pool_size = 5
+2026-10-30 00:33:22,454 WARNING: Postgresql is not running.
+2026-10-30 00:33:22,454 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:33:22,454 INFO: pg_controldata:
+  pg_control version number: 1300
+  Catalog version number: 202209061
+  Database system identifier: 7702251532100730913
+  Database cluster state: in production
+  pg_control last modified: Fri Oct 30 00:31:07 2026
+  Latest checkpoint location: 0/5000108
+  Latest checkpoint's REDO location: 0/50000D0
+  Latest checkpoint's REDO WAL file: 000000030000000000000005
+  Latest checkpoint's TimeLineID: 3
+  Latest checkpoint's PrevTimeLineID: 3
+  Latest checkpoint's full_page_writes: on
+  Latest checkpoint's NextXID: 0:732
+  Latest checkpoint's NextOID: 16395
+  Latest checkpoint's NextMultiXactId: 1
+  Latest checkpoint's NextMultiOffset: 0
+  Latest checkpoint's oldestXID: 717
+  Latest checkpoint's oldestXID's DB: 1
+  Latest checkpoint's oldestActiveXID: 732
+  Latest checkpoint's oldestMultiXid: 1
+  Latest checkpoint's oldestMulti's DB: 1
+  Latest checkpoint's oldestCommitTsXid: 0
+  Latest checkpoint's newestCommitTsXid: 0
+  Time of latest checkpoint: Fri Oct 30 00:31:07 2026
+  Fake LSN counter for unlogged rels: 0/3E8
+  Minimum recovery ending location: 0/0
+  Min recovery ending loc's timeline: 0
+  Backup start location: 0/0
+  Backup end location: 0/0
+  End-of-backup record required: no
+  wal_level setting: replica
+  wal_log_hints setting: on
+  max_connections setting: 100
+  max_worker_processes setting: 8
+  max_wal_senders setting: 10
+  max_prepared_xacts setting: 0
+  max_locks_per_xact setting: 64
+  track_commit_timestamp setting: off
+  Maximum data alignment: 8
+  Database block size: 8192
+  Blocks per segment of large relation: 131072
+  WAL block size: 8192
+  Bytes per WAL segment: 16777216
+  Maximum length of identifiers: 64
+  Maximum columns in an index: 32
+  Maximum size of a TOAST chunk: 1996
+  Size of a large-object chunk: 2048
+  Date/time type storage: 64-bit integers
+  Float8 argument passing: by value
+  Data page checksum version: 0
+  Mock authentication nonce: 55079be318befb2bea7feb61ed3ee8176df94628e80a16754dbcf5e12a237329
+
+2026-10-30 00:33:22,467 INFO: doing crash recovery in a single user mode
+2026-10-30 00:33:22,596 WARNING: Postgresql is not running.
+2026-10-30 00:33:22,596 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:33:22,597 INFO: pg_controldata:
+  pg_control version number: 1300
+  Catalog version number: 202209061
+  Database system identifier: 7702251532100730913
+  Database cluster state: shut down
+  pg_control last modified: Fri Oct 30 00:33:22 2026
+  Latest checkpoint location: 0/6000028
+  Latest checkpoint's REDO location: 0/6000028
+  Latest checkpoint's REDO WAL file: 000000030000000000000006
+  Latest checkpoint's TimeLineID: 3
+  Latest checkpoint's PrevTimeLineID: 3
+  Latest checkpoint's full_page_writes: on
+  Latest checkpoint's NextXID: 0:735
+  Latest checkpoint's NextOID: 16395
+  Latest checkpoint's NextMultiXactId: 1
+  Latest checkpoint's NextMultiOffset: 0
+  Latest checkpoint's oldestXID: 717
+  Latest checkpoint's oldestXID's DB: 1
+  Latest checkpoint's oldestActiveXID: 0
+  Latest checkpoint's oldestMultiXid: 1
+  Latest checkpoint's oldestMulti's DB: 1
+  Latest checkpoint's oldestCommitTsXid: 0
+  Latest checkpoint's newestCommitTsXid: 0
+  Time of latest checkpoint: Fri Oct 30 00:33:22 2026
+  Fake LSN counter for unlogged rels: 0/3E8
+  Minimum recovery ending location: 0/0
+  Min recovery ending loc's timeline: 0
+  Backup start location: 0/0
+  Backup end location: 0/0
+  End-of-backup record required: no
+  wal_level setting: replica
+  wal_log_hints setting: on
+  max_connections setting: 100
+  max_worker_processes setting: 8
+  max_wal_senders setting: 10
+  max_prepared_xacts setting: 0
+  max_locks_per_xact setting: 64
+  track_commit_timestamp setting: off
+  Maximum data alignment: 8
+  Database block size: 8192
+  Blocks per segment of large relation: 131072
+  WAL block size: 8192
+  Bytes per WAL segment: 16777216
+  Maximum length of identifiers: 64
+  Maximum columns in an index: 32
+  Maximum size of a TOAST chunk: 1996
+  Size of a large-object chunk: 2048
+  Date/time type storage: 64-bit integers
+  Float8 argument passing: by value
+  Data page checksum version: 0
+  Mock authentication nonce: 55079be318befb2bea7feb61ed3ee8176df94628e80a16754dbcf5e12a237329
+
+2026-10-30 00:33:22,602 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:33:22,605 INFO: Local timeline=3 lsn=0/6000028
+2026-10-30 00:33:22,616 INFO: primary_timeline=4
+2026-10-30 00:33:22,617 INFO: primary: history=1	0/40000A0	no recovery target specified
+2	0/50000A0	no recovery target specified
+3	0/5005C18	no recovery target specified
+2026-10-30 00:33:22,619 INFO: running pg_rewind from postgresql1
+2026-10-30 00:33:22,629 INFO: Trying to archive 000000030000000000000005: mkdir -p /tmp/wal_archive && test ! -f /tmp/wal_archive/000000030000000000000005 && cp /var/lib/postgresql/data/postgresql0/pg_wal/000000030000000000000005 /tmp/wal_archive/000000030000000000000005
+2026-10-30 00:33:22,643 INFO: running pg_rewind from dbname=postgres user=postgres host=pg-slave port=5432 target_session_attrs=read-write
+2026-10-30 00:33:23,103 INFO: pg_rewind exit code=1
+2026-10-30 00:33:23,103 INFO:  stdout=
+2026-10-30 00:33:23,103 INFO:  stderr=pg_rewind: servers diverged at WAL location 0/5005C18 on timeline 3
+pg_rewind: rewinding from last common checkpoint at 0/5000108 on timeline 3
+pg_rewind: error: could not open target file "/var/lib/postgresql/data/postgresql0/.s.PGSQL.5432": No such device or address
+
+2026-10-30 00:33:23,109 ERROR: Failed to rewind from healthy primary: postgresql1
+2026-10-30 00:33:23,112 WARNING: Postgresql is not running.
+2026-10-30 00:33:23,112 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:33:23,112 INFO: pg_controldata:
+  pg_control version number: 1300
+  Catalog version number: 202209061
+  Database system identifier: 7702251532100730913
+  Database cluster state: shut down
+  pg_control last modified: Fri Oct 30 00:33:22 2026
+  Latest checkpoint location: 0/6000028
+  Latest checkpoint's REDO location: 0/6000028
+  Latest checkpoint's REDO WAL file: 000000030000000000000006
+  Latest checkpoint's TimeLineID: 3
+  Latest checkpoint's PrevTimeLineID: 3
+  Latest checkpoint's full_page_writes: on
+  Latest checkpoint's NextXID: 0:735
+  Latest checkpoint's NextOID: 16395
+  Latest checkpoint's NextMultiXactId: 1
+  Latest checkpoint's NextMultiOffset: 0
+  Latest checkpoint's oldestXID: 717
+  Latest checkpoint's oldestXID's DB: 1
+  Latest checkpoint's oldestActiveXID: 0
+  Latest checkpoint's oldestMultiXid: 1
+  Latest checkpoint's oldestMulti's DB: 1
+  Latest checkpoint's oldestCommitTsXid: 0
+  Latest checkpoint's newestCommitTsXid: 0
+  Time of latest checkpoint: Fri Oct 30 00:33:22 2026
+  Fake LSN counter for unlogged rels: 0/3E8
+  Minimum recovery ending location: 0/0
+  Min recovery ending loc's timeline: 0
+  Backup start location: 0/0
+  Backup end location: 0/0
+  End-of-backup record required: no
+  wal_level setting: replica
+  wal_log_hints setting: on
+  max_connections setting: 100
+  max_worker_processes setting: 8
+  max_wal_senders setting: 10
+  max_prepared_xacts setting: 0
+  max_locks_per_xact setting: 64
+  track_commit_timestamp setting: off
+  Maximum data alignment: 8
+  Database block size: 8192
+  Blocks per segment of large relation: 131072
+  WAL block size: 8192
+  Bytes per WAL segment: 16777216
+  Maximum length of identifiers: 64
+  Maximum columns in an index: 32
+  Maximum size of a TOAST chunk: 1996
+  Size of a large-object chunk: 2048
+  Date/time type storage: 64-bit integers
+  Float8 argument passing: by value
+  Data page checksum version: 0
+  Mock authentication nonce: 55079be318befb2bea7feb61ed3ee8176df94628e80a16754dbcf5e12a237329
+
+2026-10-30 00:33:23,115 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:33:23,115 INFO: starting as a secondary
+2026-10-30 00:33:23,269 INFO: postmaster pid=61
+2026-10-30 00:33:23.270 UTC [61] LOG:  starting PostgreSQL 15.19 (Debian 15.19-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-10-30 00:33:23.270 UTC [61] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-10-30 00:33:23.275 UTC [61] LOG:  listening on Unix socket "./.s.PGSQL.5432"
+2026-10-30 00:33:23.280 UTC [65] LOG:  database system was shut down at 2026-10-30 00:33:22 UTC
+2026-10-30 00:33:23.280 UTC [66] FATAL:  the database system is starting up
+localhost:5432 - rejecting connections
+2026-10-30 00:33:23.281 UTC [65] LOG:  entering standby mode
+2026-10-30 00:33:23.283 UTC [68] FATAL:  the database system is starting up
+2026-10-30 00:33:23.283 UTC [65] LOG:  consistent recovery state reached at 0/60000A0
+2026-10-30 00:33:23.283 UTC [65] LOG:  invalid record length at 0/60000A0: wanted 24, got 0
+localhost:5432 - rejecting connections
+2026-10-30 00:33:23.283 UTC [61] LOG:  database system is ready to accept read-only connections
+2026-10-30 00:33:23.289 UTC [70] LOG:  fetching timeline history file for timeline 4 from primary server
+2026-10-30 00:33:23.293 UTC [70] FATAL:  could not start WAL streaming: ERROR:  requested starting point 0/6000000 on timeline 3 is not in this server's history
+	DETAIL:  This server's history forked from timeline 3 at 0/5005C18.
+2026-10-30 00:33:23.293 UTC [65] LOG:  new timeline 4 forked off current database system timeline 3 before current recovery point 0/60000A0
+2026-10-30 00:33:23.299 UTC [74] FATAL:  could not start WAL streaming: ERROR:  requested starting point 0/6000000 on timeline 3 is not in this server's history
+	DETAIL:  This server's history forked from timeline 3 at 0/5005C18.
+2026-10-30 00:33:23.299 UTC [65] LOG:  new timeline 4 forked off current database system timeline 3 before current recovery point 0/60000A0
+2026-10-30 00:33:23.299 UTC [65] LOG:  waiting for WAL to become available at 0/60000B8
+localhost:5432 - accepting connections
+2026-10-30 00:33:24,314 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:33:24,314 INFO: establishing a new patroni heartbeat connection to postgres
+2026-10-30 00:33:24,343 INFO: no action. I am (postgresql0), a secondary, and following a leader (postgresql1)
+2026-10-30 00:33:25,168 INFO: establishing a new patroni restapi connection to postgres
+2026-10-30 00:33:28.318 UTC [93] FATAL:  could not start WAL streaming: ERROR:  requested starting point 0/6000000 on timeline 3 is not in this server's history
+	DETAIL:  This server's history forked from timeline 3 at 0/5005C18.
+2026-10-30 00:33:28.319 UTC [65] LOG:  new timeline 4 forked off current database system timeline 3 before current recovery point 0/60000A0
+2026-10-30 00:33:28.319 UTC [65] LOG:  waiting for WAL to become available at 0/60000B8
+2026-10-30 00:33:33.319 UTC [113] FATAL:  could not start WAL streaming: ERROR:  requested starting point 0/6000000 on timeline 3 is not in this server's history
+	DETAIL:  This server's history forked from timeline 3 at 0/5005C18.
+2026-10-30 00:33:33.319 UTC [65] LOG:  new timeline 4 forked off current database system timeline 3 before current recovery point 0/60000A0
+2026-10-30 00:33:33.319 UTC [65] LOG:  waiting for WAL to become available at 0/60000B8
+2026-10-30 00:33:34,318 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:33:34,330 INFO: Local timeline=3 lsn=0/60000A0
+2026-10-30 00:33:34,349 INFO: primary_timeline=4
+2026-10-30 00:33:34,349 INFO: primary: history=1	0/40000A0	no recovery target specified
+2	0/50000A0	no recovery target specified
+3	0/5005C18	no recovery target specified
+2026-10-30 00:33:34,361 INFO: running pg_rewind from postgresql1
+2026-10-30 00:33:34.361 UTC [61] LOG:  received fast shutdown request
+2026-10-30 00:33:34.363 UTC [61] LOG:  aborting any active transactions
+2026-10-30 00:33:34.363 UTC [79] FATAL:  terminating connection due to administrator command
+2026-10-30 00:33:34.363 UTC [81] FATAL:  terminating connection due to administrator command
+2026-10-30 00:33:34.365 UTC [63] LOG:  shutting down
+2026-10-30 00:33:34.372 UTC [61] LOG:  database system is shut down
+2026-10-30 00:33:35,402 INFO: running pg_rewind from dbname=postgres user=postgres host=pg-slave port=5432 target_session_attrs=read-write
+2026-10-30 00:33:35,576 INFO: pg_rewind exit code=1
+2026-10-30 00:33:35,576 INFO:  stdout=
+2026-10-30 00:33:35,576 INFO:  stderr=pg_rewind: servers diverged at WAL location 0/5005C18 on timeline 3
+pg_rewind: rewinding from last common checkpoint at 0/5000108 on timeline 3
+pg_rewind: error: unexpected result while fetching remote files: ERROR:  could not open file ".s.PGSQL.5432" for reading: No such device or address
+
+2026-10-30 00:33:35,581 ERROR: Failed to rewind from healthy primary: postgresql1
+2026-10-30 00:33:35,585 WARNING: Postgresql is not running.
+2026-10-30 00:33:35,585 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:33:35,586 INFO: pg_controldata:
+  pg_control version number: 1300
+  Catalog version number: 202209061
+  Database system identifier: 7702251532100730913
+  Database cluster state: shut down in recovery
+  pg_control last modified: Fri Oct 30 00:33:34 2026
+  Latest checkpoint location: 0/6000028
+  Latest checkpoint's REDO location: 0/6000028
+  Latest checkpoint's REDO WAL file: 000000030000000000000006
+  Latest checkpoint's TimeLineID: 3
+  Latest checkpoint's PrevTimeLineID: 3
+  Latest checkpoint's full_page_writes: on
+  Latest checkpoint's NextXID: 0:735
+  Latest checkpoint's NextOID: 16395
+  Latest checkpoint's NextMultiXactId: 1
+  Latest checkpoint's NextMultiOffset: 0
+  Latest checkpoint's oldestXID: 717
+  Latest checkpoint's oldestXID's DB: 1
+  Latest checkpoint's oldestActiveXID: 0
+  Latest checkpoint's oldestMultiXid: 1
+  Latest checkpoint's oldestMulti's DB: 1
+  Latest checkpoint's oldestCommitTsXid: 0
+  Latest checkpoint's newestCommitTsXid: 0
+  Time of latest checkpoint: Fri Oct 30 00:33:22 2026
+  Fake LSN counter for unlogged rels: 0/3E8
+  Minimum recovery ending location: 0/60000A0
+  Min recovery ending loc's timeline: 3
+  Backup start location: 0/0
+  Backup end location: 0/0
+  End-of-backup record required: no
+  wal_level setting: replica
+  wal_log_hints setting: on
+  max_connections setting: 100
+  max_worker_processes setting: 8
+  max_wal_senders setting: 10
+  max_prepared_xacts setting: 0
+  max_locks_per_xact setting: 64
+  track_commit_timestamp setting: off
+  Maximum data alignment: 8
+  Database block size: 8192
+  Blocks per segment of large relation: 131072
+  WAL block size: 8192
+  Bytes per WAL segment: 16777216
+  Maximum length of identifiers: 64
+  Maximum columns in an index: 32
+  Maximum size of a TOAST chunk: 1996
+  Size of a large-object chunk: 2048
+  Date/time type storage: 64-bit integers
+  Float8 argument passing: by value
+  Data page checksum version: 0
+  Mock authentication nonce: 55079be318befb2bea7feb61ed3ee8176df94628e80a16754dbcf5e12a237329
+
+2026-10-30 00:33:35,587 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:33:35,592 INFO: starting as a secondary
+2026-10-30 00:33:35,592 INFO: closed patroni connections to postgres
+2026-10-30 00:33:35.753 GMT [138] LOG:  starting PostgreSQL 15.19 (Debian 15.19-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-10-30 00:33:35.753 GMT [138] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-10-30 00:33:35.754 GMT [138] FATAL:  lock file "./.s.PGSQL.5432.lock" is empty
+2026-10-30 00:33:35.754 GMT [138] HINT:  Either another server is starting, or the lock file is the remnant of a previous server startup crash.
+2026-10-30 00:33:35.755 GMT [138] LOG:  database system is shut down
+2026-10-30 00:33:35,760 INFO: postmaster pid=138
+2026-10-30 00:33:37,230 INFO: establishing a new patroni heartbeat connection to postgres
+2026-10-30 00:33:40,243 INFO: establishing a new patroni heartbeat connection to postgres
+2026-10-30 00:33:43,255 INFO: establishing a new patroni heartbeat connection to postgres
+localhost:5432 - no response
+2026-10-30 00:33:45,588 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:33:45,594 INFO: failed to start postgres
+2026-10-30 00:33:55,586 WARNING: Postgresql is not running.
+2026-10-30 00:33:55,586 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:33:55,586 INFO: pg_controldata:
+  pg_control version number: 1300
+  Catalog version number: 202209061
+  Database system identifier: 7702251532100730913
+  Database cluster state: shut down in recovery
+  pg_control last modified: Fri Oct 30 00:33:34 2026
+  Latest checkpoint location: 0/6000028
+  Latest checkpoint's REDO location: 0/6000028
+  Latest checkpoint's REDO WAL file: 000000030000000000000006
+  Latest checkpoint's TimeLineID: 3
+  Latest checkpoint's PrevTimeLineID: 3
+  Latest checkpoint's full_page_writes: on
+  Latest checkpoint's NextXID: 0:735
+  Latest checkpoint's NextOID: 16395
+  Latest checkpoint's NextMultiXactId: 1
+  Latest checkpoint's NextMultiOffset: 0
+  Latest checkpoint's oldestXID: 717
+  Latest checkpoint's oldestXID's DB: 1
+  Latest checkpoint's oldestActiveXID: 0
+  Latest checkpoint's oldestMultiXid: 1
+  Latest checkpoint's oldestMulti's DB: 1
+  Latest checkpoint's oldestCommitTsXid: 0
+  Latest checkpoint's newestCommitTsXid: 0
+  Time of latest checkpoint: Fri Oct 30 00:33:22 2026
+  Fake LSN counter for unlogged rels: 0/3E8
+  Minimum recovery ending location: 0/60000A0
+  Min recovery ending loc's timeline: 3
+  Backup start location: 0/0
+  Backup end location: 0/0
+  End-of-backup record required: no
+  wal_level setting: replica
+  wal_log_hints setting: on
+  max_connections setting: 100
+  max_worker_processes setting: 8
+  max_wal_senders setting: 10
+  max_prepared_xacts setting: 0
+  max_locks_per_xact setting: 64
+  track_commit_timestamp setting: off
+  Maximum data alignment: 8
+  Database block size: 8192
+  Blocks per segment of large relation: 131072
+  WAL block size: 8192
+  Bytes per WAL segment: 16777216
+  Maximum length of identifiers: 64
+  Maximum columns in an index: 32
+  Maximum size of a TOAST chunk: 1996
+  Size of a large-object chunk: 2048
+  Date/time type storage: 64-bit integers
+  Float8 argument passing: by value
+  Data page checksum version: 0
+  Mock authentication nonce: 55079be318befb2bea7feb61ed3ee8176df94628e80a16754dbcf5e12a237329
+
+2026-10-30 00:33:55,589 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:33:55,589 INFO: starting as a secondary
+2026-10-30 00:33:55.732 GMT [198] LOG:  starting PostgreSQL 15.19 (Debian 15.19-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-10-30 00:33:55.732 GMT [198] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-10-30 00:33:55.733 GMT [198] FATAL:  lock file "./.s.PGSQL.5432.lock" is empty
+2026-10-30 00:33:55.733 GMT [198] HINT:  Either another server is starting, or the lock file is the remnant of a previous server startup crash.
+2026-10-30 00:33:55.734 GMT [198] LOG:  database system is shut down
+2026-10-30 00:33:55,737 INFO: postmaster pid=198
+2026-10-30 00:33:58,301 INFO: establishing a new patroni heartbeat connection to postgres
+2026-10-30 00:34:01,315 INFO: establishing a new patroni heartbeat connection to postgres
+2026-10-30 00:34:04,328 INFO: establishing a new patroni heartbeat connection to postgres
+localhost:5432 - no response
+2026-10-30 00:34:05,595 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:34:05,595 INFO: failed to start postgres
+2026-10-30 00:34:15,592 WARNING: Postgresql is not running.
+2026-10-30 00:34:15,592 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:34:15,593 INFO: pg_controldata:
+  pg_control version number: 1300
+  Catalog version number: 202209061
+  Database system identifier: 7702251532100730913
+  Database cluster state: shut down in recovery
+  pg_control last modified: Fri Oct 30 00:33:34 2026
+  Latest checkpoint location: 0/6000028
+  Latest checkpoint's REDO location: 0/6000028
+  Latest checkpoint's REDO WAL file: 000000030000000000000006
+  Latest checkpoint's TimeLineID: 3
+  Latest checkpoint's PrevTimeLineID: 3
+  Latest checkpoint's full_page_writes: on
+  Latest checkpoint's NextXID: 0:735
+  Latest checkpoint's NextOID: 16395
+  Latest checkpoint's NextMultiXactId: 1
+  Latest checkpoint's NextMultiOffset: 0
+  Latest checkpoint's oldestXID: 717
+  Latest checkpoint's oldestXID's DB: 1
+  Latest checkpoint's oldestActiveXID: 0
+  Latest checkpoint's oldestMultiXid: 1
+  Latest checkpoint's oldestMulti's DB: 1
+  Latest checkpoint's oldestCommitTsXid: 0
+  Latest checkpoint's newestCommitTsXid: 0
+  Time of latest checkpoint: Fri Oct 30 00:33:22 2026
+  Fake LSN counter for unlogged rels: 0/3E8
+  Minimum recovery ending location: 0/60000A0
+  Min recovery ending loc's timeline: 3
+  Backup start location: 0/0
+  Backup end location: 0/0
+  End-of-backup record required: no
+  wal_level setting: replica
+  wal_log_hints setting: on
+  max_connections setting: 100
+  max_worker_processes setting: 8
+  max_wal_senders setting: 10
+  max_prepared_xacts setting: 0
+  max_locks_per_xact setting: 64
+  track_commit_timestamp setting: off
+  Maximum data alignment: 8
+  Database block size: 8192
+  Blocks per segment of large relation: 131072
+  WAL block size: 8192
+  Bytes per WAL segment: 16777216
+  Maximum length of identifiers: 64
+  Maximum columns in an index: 32
+  Maximum size of a TOAST chunk: 1996
+  Size of a large-object chunk: 2048
+  Date/time type storage: 64-bit integers
+  Float8 argument passing: by value
+  Data page checksum version: 0
+  Mock authentication nonce: 55079be318befb2bea7feb61ed3ee8176df94628e80a16754dbcf5e12a237329
+
+2026-10-30 00:34:15,598 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:34:15,598 INFO: starting as a secondary
+2026-10-30 00:34:15.763 GMT [257] LOG:  starting PostgreSQL 15.19 (Debian 15.19-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-10-30 00:34:15.763 GMT [257] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-10-30 00:34:15.764 GMT [257] FATAL:  lock file "./.s.PGSQL.5432.lock" is empty
+2026-10-30 00:34:15.764 GMT [257] HINT:  Either another server is starting, or the lock file is the remnant of a previous server startup crash.
+2026-10-30 00:34:15.765 GMT [257] LOG:  database system is shut down
+2026-10-30 00:34:15,766 INFO: postmaster pid=257
+2026-10-30 00:34:16,373 INFO: establishing a new patroni heartbeat connection to postgres
+2026-10-30 00:34:19,382 INFO: establishing a new patroni heartbeat connection to postgres
+2026-10-30 00:34:22,394 INFO: establishing a new patroni heartbeat connection to postgres
+2026-10-30 00:34:25,410 INFO: establishing a new patroni heartbeat connection to postgres
+localhost:5432 - no response
+2026-10-30 00:34:25,606 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:34:25,606 INFO: failed to start postgres
+2026-10-30 00:34:35,593 WARNING: Postgresql is not running.
+2026-10-30 00:34:35,593 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:34:35,594 INFO: pg_controldata:
+  pg_control version number: 1300
+  Catalog version number: 202209061
+  Database system identifier: 7702251532100730913
+  Database cluster state: shut down in recovery
+  pg_control last modified: Fri Oct 30 00:33:34 2026
+  Latest checkpoint location: 0/6000028
+  Latest checkpoint's REDO location: 0/6000028
+  Latest checkpoint's REDO WAL file: 000000030000000000000006
+  Latest checkpoint's TimeLineID: 3
+  Latest checkpoint's PrevTimeLineID: 3
+  Latest checkpoint's full_page_writes: on
+  Latest checkpoint's NextXID: 0:735
+  Latest checkpoint's NextOID: 16395
+  Latest checkpoint's NextMultiXactId: 1
+  Latest checkpoint's NextMultiOffset: 0
+  Latest checkpoint's oldestXID: 717
+  Latest checkpoint's oldestXID's DB: 1
+  Latest checkpoint's oldestActiveXID: 0
+  Latest checkpoint's oldestMultiXid: 1
+  Latest checkpoint's oldestMulti's DB: 1
+  Latest checkpoint's oldestCommitTsXid: 0
+  Latest checkpoint's newestCommitTsXid: 0
+  Time of latest checkpoint: Fri Oct 30 00:33:22 2026
+  Fake LSN counter for unlogged rels: 0/3E8
+  Minimum recovery ending location: 0/60000A0
+  Min recovery ending loc's timeline: 3
+  Backup start location: 0/0
+  Backup end location: 0/0
+  End-of-backup record required: no
+  wal_level setting: replica
+  wal_log_hints setting: on
+  max_connections setting: 100
+  max_worker_processes setting: 8
+  max_wal_senders setting: 10
+  max_prepared_xacts setting: 0
+  max_locks_per_xact setting: 64
+  track_commit_timestamp setting: off
+  Maximum data alignment: 8
+  Database block size: 8192
+  Blocks per segment of large relation: 131072
+  WAL block size: 8192
+  Bytes per WAL segment: 16777216
+  Maximum length of identifiers: 64
+  Maximum columns in an index: 32
+  Maximum size of a TOAST chunk: 1996
+  Size of a large-object chunk: 2048
+  Date/time type storage: 64-bit integers
+  Float8 argument passing: by value
+  Data page checksum version: 0
+  Mock authentication nonce: 55079be318befb2bea7feb61ed3ee8176df94628e80a16754dbcf5e12a237329
+
+2026-10-30 00:34:35,601 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:34:35,601 INFO: starting as a secondary
+2026-10-30 00:34:35.775 GMT [317] LOG:  starting PostgreSQL 15.19 (Debian 15.19-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-10-30 00:34:35.775 GMT [317] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-10-30 00:34:35.777 GMT [317] FATAL:  lock file "./.s.PGSQL.5432.lock" is empty
+2026-10-30 00:34:35.777 GMT [317] HINT:  Either another server is starting, or the lock file is the remnant of a previous server startup crash.
+2026-10-30 00:34:35,776 INFO: postmaster pid=317
+2026-10-30 00:34:35.777 GMT [317] LOG:  database system is shut down
+localhost:5432 - no response
+2026-10-30 00:34:36,790 ERROR: postmaster is not running
+2026-10-30 00:34:45,596 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:34:45,596 INFO: failed to start postgres
+2026-10-30 00:34:55,600 WARNING: Postgresql is not running.
+2026-10-30 00:34:55,601 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:34:55,602 INFO: pg_controldata:
+  pg_control version number: 1300
+  Catalog version number: 202209061
+  Database system identifier: 7702251532100730913
+  Database cluster state: shut down in recovery
+  pg_control last modified: Fri Oct 30 00:33:34 2026
+  Latest checkpoint location: 0/6000028
+  Latest checkpoint's REDO location: 0/6000028
+  Latest checkpoint's REDO WAL file: 000000030000000000000006
+  Latest checkpoint's TimeLineID: 3
+  Latest checkpoint's PrevTimeLineID: 3
+  Latest checkpoint's full_page_writes: on
+  Latest checkpoint's NextXID: 0:735
+  Latest checkpoint's NextOID: 16395
+  Latest checkpoint's NextMultiXactId: 1
+  Latest checkpoint's NextMultiOffset: 0
+  Latest checkpoint's oldestXID: 717
+  Latest checkpoint's oldestXID's DB: 1
+  Latest checkpoint's oldestActiveXID: 0
+  Latest checkpoint's oldestMultiXid: 1
+  Latest checkpoint's oldestMulti's DB: 1
+  Latest checkpoint's oldestCommitTsXid: 0
+  Latest checkpoint's newestCommitTsXid: 0
+  Time of latest checkpoint: Fri Oct 30 00:33:22 2026
+  Fake LSN counter for unlogged rels: 0/3E8
+  Minimum recovery ending location: 0/60000A0
+  Min recovery ending loc's timeline: 3
+  Backup start location: 0/0
+  Backup end location: 0/0
+  End-of-backup record required: no
+  wal_level setting: replica
+  wal_log_hints setting: on
+  max_connections setting: 100
+  max_worker_processes setting: 8
+  max_wal_senders setting: 10
+  max_prepared_xacts setting: 0
+  max_locks_per_xact setting: 64
+  track_commit_timestamp setting: off
+  Maximum data alignment: 8
+  Database block size: 8192
+  Blocks per segment of large relation: 131072
+  WAL block size: 8192
+  Bytes per WAL segment: 16777216
+  Maximum length of identifiers: 64
+  Maximum columns in an index: 32
+  Maximum size of a TOAST chunk: 1996
+  Size of a large-object chunk: 2048
+  Date/time type storage: 64-bit integers
+  Float8 argument passing: by value
+  Data page checksum version: 0
+  Mock authentication nonce: 55079be318befb2bea7feb61ed3ee8176df94628e80a16754dbcf5e12a237329
+
+2026-10-30 00:34:55,608 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:34:55,609 INFO: starting as a secondary
+2026-10-30 00:34:55.797 GMT [378] LOG:  starting PostgreSQL 15.19 (Debian 15.19-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-10-30 00:34:55.797 GMT [378] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-10-30 00:34:55.798 GMT [378] FATAL:  lock file "./.s.PGSQL.5432.lock" is empty
+2026-10-30 00:34:55.798 GMT [378] HINT:  Either another server is starting, or the lock file is the remnant of a previous server startup crash.
+2026-10-30 00:34:55.799 GMT [378] LOG:  database system is shut down
+2026-10-30 00:34:55,801 INFO: postmaster pid=378
+2026-10-30 00:34:58,536 INFO: establishing a new patroni heartbeat connection to postgres
+2026-10-30 00:35:01,545 INFO: establishing a new patroni heartbeat connection to postgres
+2026-10-30 00:35:04,556 INFO: establishing a new patroni heartbeat connection to postgres
+localhost:5432 - no response
+2026-10-30 00:35:05,603 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:35:05,603 INFO: failed to start postgres
+2026-10-30 00:35:15,597 WARNING: Postgresql is not running.
+2026-10-30 00:35:15,597 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:35:15,599 INFO: pg_controldata:
+  pg_control version number: 1300
+  Catalog version number: 202209061
+  Database system identifier: 7702251532100730913
+  Database cluster state: shut down in recovery
+  pg_control last modified: Fri Oct 30 00:33:34 2026
+  Latest checkpoint location: 0/6000028
+  Latest checkpoint's REDO location: 0/6000028
+  Latest checkpoint's REDO WAL file: 000000030000000000000006
+  Latest checkpoint's TimeLineID: 3
+  Latest checkpoint's PrevTimeLineID: 3
+  Latest checkpoint's full_page_writes: on
+  Latest checkpoint's NextXID: 0:735
+  Latest checkpoint's NextOID: 16395
+  Latest checkpoint's NextMultiXactId: 1
+  Latest checkpoint's NextMultiOffset: 0
+  Latest checkpoint's oldestXID: 717
+  Latest checkpoint's oldestXID's DB: 1
+  Latest checkpoint's oldestActiveXID: 0
+  Latest checkpoint's oldestMultiXid: 1
+  Latest checkpoint's oldestMulti's DB: 1
+  Latest checkpoint's oldestCommitTsXid: 0
+  Latest checkpoint's newestCommitTsXid: 0
+  Time of latest checkpoint: Fri Oct 30 00:33:22 2026
+  Fake LSN counter for unlogged rels: 0/3E8
+  Minimum recovery ending location: 0/60000A0
+  Min recovery ending loc's timeline: 3
+  Backup start location: 0/0
+  Backup end location: 0/0
+  End-of-backup record required: no
+  wal_level setting: replica
+  wal_log_hints setting: on
+  max_connections setting: 100
+  max_worker_processes setting: 8
+  max_wal_senders setting: 10
+  max_prepared_xacts setting: 0
+  max_locks_per_xact setting: 64
+  track_commit_timestamp setting: off
+  Maximum data alignment: 8
+  Database block size: 8192
+  Blocks per segment of large relation: 131072
+  WAL block size: 8192
+  Bytes per WAL segment: 16777216
+  Maximum length of identifiers: 64
+  Maximum columns in an index: 32
+  Maximum size of a TOAST chunk: 1996
+  Size of a large-object chunk: 2048
+  Date/time type storage: 64-bit integers
+  Float8 argument passing: by value
+  Data page checksum version: 0
+  Mock authentication nonce: 55079be318befb2bea7feb61ed3ee8176df94628e80a16754dbcf5e12a237329
+
+2026-10-30 00:35:15,605 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:35:15,606 INFO: starting as a secondary
+2026-10-30 00:35:15.778 GMT [438] LOG:  starting PostgreSQL 15.19 (Debian 15.19-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-10-30 00:35:15.778 GMT [438] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-10-30 00:35:15.780 GMT [438] FATAL:  lock file "./.s.PGSQL.5432.lock" is empty
+2026-10-30 00:35:15.780 GMT [438] HINT:  Either another server is starting, or the lock file is the remnant of a previous server startup crash.
+2026-10-30 00:35:15.780 GMT [438] LOG:  database system is shut down
+2026-10-30 00:35:15,781 INFO: postmaster pid=438
+2026-10-30 00:35:16,609 INFO: establishing a new patroni heartbeat connection to postgres
+2026-10-30 00:35:19,623 INFO: establishing a new patroni heartbeat connection to postgres
+2026-10-30 00:35:22,638 INFO: establishing a new patroni heartbeat connection to postgres
+localhost:5432 - no response
+2026-10-30 00:35:25,608 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:35:25,608 INFO: failed to start postgres
+2026-10-30 00:35:35,599 WARNING: Postgresql is not running.
+2026-10-30 00:35:35,599 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:35:35,601 INFO: pg_controldata:
+  pg_control version number: 1300
+  Catalog version number: 202209061
+  Database system identifier: 7702251532100730913
+  Database cluster state: shut down in recovery
+  pg_control last modified: Fri Oct 30 00:33:34 2026
+  Latest checkpoint location: 0/6000028
+  Latest checkpoint's REDO location: 0/6000028
+  Latest checkpoint's REDO WAL file: 000000030000000000000006
+  Latest checkpoint's TimeLineID: 3
+  Latest checkpoint's PrevTimeLineID: 3
+  Latest checkpoint's full_page_writes: on
+  Latest checkpoint's NextXID: 0:735
+  Latest checkpoint's NextOID: 16395
+  Latest checkpoint's NextMultiXactId: 1
+  Latest checkpoint's NextMultiOffset: 0
+  Latest checkpoint's oldestXID: 717
+  Latest checkpoint's oldestXID's DB: 1
+  Latest checkpoint's oldestActiveXID: 0
+  Latest checkpoint's oldestMultiXid: 1
+  Latest checkpoint's oldestMulti's DB: 1
+  Latest checkpoint's oldestCommitTsXid: 0
+  Latest checkpoint's newestCommitTsXid: 0
+  Time of latest checkpoint: Fri Oct 30 00:33:22 2026
+  Fake LSN counter for unlogged rels: 0/3E8
+  Minimum recovery ending location: 0/60000A0
+  Min recovery ending loc's timeline: 3
+  Backup start location: 0/0
+  Backup end location: 0/0
+  End-of-backup record required: no
+  wal_level setting: replica
+  wal_log_hints setting: on
+  max_connections setting: 100
+  max_worker_processes setting: 8
+  max_wal_senders setting: 10
+  max_prepared_xacts setting: 0
+  max_locks_per_xact setting: 64
+  track_commit_timestamp setting: off
+  Maximum data alignment: 8
+  Database block size: 8192
+  Blocks per segment of large relation: 131072
+  WAL block size: 8192
+  Bytes per WAL segment: 16777216
+  Maximum length of identifiers: 64
+  Maximum columns in an index: 32
+  Maximum size of a TOAST chunk: 1996
+  Size of a large-object chunk: 2048
+  Date/time type storage: 64-bit integers
+  Float8 argument passing: by value
+  Data page checksum version: 0
+  Mock authentication nonce: 55079be318befb2bea7feb61ed3ee8176df94628e80a16754dbcf5e12a237329
+
+2026-10-30 00:35:35,608 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:35:35,609 INFO: starting as a secondary
+2026-10-30 00:35:35.787 GMT [499] LOG:  starting PostgreSQL 15.19 (Debian 15.19-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-10-30 00:35:35.787 GMT [499] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-10-30 00:35:35,788 INFO: postmaster pid=499
+2026-10-30 00:35:35.789 GMT [499] FATAL:  lock file "./.s.PGSQL.5432.lock" is empty
+2026-10-30 00:35:35.789 GMT [499] HINT:  Either another server is starting, or the lock file is the remnant of a previous server startup crash.
+2026-10-30 00:35:35.789 GMT [499] LOG:  database system is shut down
+localhost:5432 - no response
+2026-10-30 00:35:36,802 ERROR: postmaster is not running
+2026-10-30 00:35:45,592 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:35:45,593 INFO: failed to start postgres
+2026-10-30 00:35:55,598 WARNING: Postgresql is not running.
+2026-10-30 00:35:55,598 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:35:55,601 INFO: pg_controldata:
+  pg_control version number: 1300
+  Catalog version number: 202209061
+  Database system identifier: 7702251532100730913
+  Database cluster state: shut down in recovery
+  pg_control last modified: Fri Oct 30 00:33:34 2026
+  Latest checkpoint location: 0/6000028
+  Latest checkpoint's REDO location: 0/6000028
+  Latest checkpoint's REDO WAL file: 000000030000000000000006
+  Latest checkpoint's TimeLineID: 3
+  Latest checkpoint's PrevTimeLineID: 3
+  Latest checkpoint's full_page_writes: on
+  Latest checkpoint's NextXID: 0:735
+  Latest checkpoint's NextOID: 16395
+  Latest checkpoint's NextMultiXactId: 1
+  Latest checkpoint's NextMultiOffset: 0
+  Latest checkpoint's oldestXID: 717
+  Latest checkpoint's oldestXID's DB: 1
+  Latest checkpoint's oldestActiveXID: 0
+  Latest checkpoint's oldestMultiXid: 1
+  Latest checkpoint's oldestMulti's DB: 1
+  Latest checkpoint's oldestCommitTsXid: 0
+  Latest checkpoint's newestCommitTsXid: 0
+  Time of latest checkpoint: Fri Oct 30 00:33:22 2026
+  Fake LSN counter for unlogged rels: 0/3E8
+  Minimum recovery ending location: 0/60000A0
+  Min recovery ending loc's timeline: 3
+  Backup start location: 0/0
+  Backup end location: 0/0
+  End-of-backup record required: no
+  wal_level setting: replica
+  wal_log_hints setting: on
+  max_connections setting: 100
+  max_worker_processes setting: 8
+  max_wal_senders setting: 10
+  max_prepared_xacts setting: 0
+  max_locks_per_xact setting: 64
+  track_commit_timestamp setting: off
+  Maximum data alignment: 8
+  Database block size: 8192
+  Blocks per segment of large relation: 131072
+  WAL block size: 8192
+  Bytes per WAL segment: 16777216
+  Maximum length of identifiers: 64
+  Maximum columns in an index: 32
+  Maximum size of a TOAST chunk: 1996
+  Size of a large-object chunk: 2048
+  Date/time type storage: 64-bit integers
+  Float8 argument passing: by value
+  Data page checksum version: 0
+  Mock authentication nonce: 55079be318befb2bea7feb61ed3ee8176df94628e80a16754dbcf5e12a237329
+
+2026-10-30 00:35:55,608 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:35:55,608 INFO: starting as a secondary
+2026-10-30 00:35:55,780 INFO: establishing a new patroni heartbeat connection to postgres
+2026-10-30 00:35:55.784 GMT [560] LOG:  starting PostgreSQL 15.19 (Debian 15.19-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-10-30 00:35:55.784 GMT [560] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-10-30 00:35:55.786 GMT [560] FATAL:  lock file "./.s.PGSQL.5432.lock" is empty
+2026-10-30 00:35:55.786 GMT [560] HINT:  Either another server is starting, or the lock file is the remnant of a previous server startup crash.
+2026-10-30 00:35:55.787 GMT [560] LOG:  database system is shut down
+2026-10-30 00:35:55,788 INFO: postmaster pid=560
+2026-10-30 00:35:58,793 INFO: establishing a new patroni heartbeat connection to postgres
+2026-10-30 00:36:01,810 INFO: establishing a new patroni heartbeat connection to postgres
+2026-10-30 00:36:04,822 INFO: establishing a new patroni heartbeat connection to postgres
+localhost:5432 - no response
+2026-10-30 00:36:05,612 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:36:05,612 INFO: failed to start postgres
+2026-10-30 00:36:15,602 WARNING: Postgresql is not running.
+2026-10-30 00:36:15,602 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:36:15,605 INFO: pg_controldata:
+  pg_control version number: 1300
+  Catalog version number: 202209061
+  Database system identifier: 7702251532100730913
+  Database cluster state: shut down in recovery
+  pg_control last modified: Fri Oct 30 00:33:34 2026
+  Latest checkpoint location: 0/6000028
+  Latest checkpoint's REDO location: 0/6000028
+  Latest checkpoint's REDO WAL file: 000000030000000000000006
+  Latest checkpoint's TimeLineID: 3
+  Latest checkpoint's PrevTimeLineID: 3
+  Latest checkpoint's full_page_writes: on
+  Latest checkpoint's NextXID: 0:735
+  Latest checkpoint's NextOID: 16395
+  Latest checkpoint's NextMultiXactId: 1
+  Latest checkpoint's NextMultiOffset: 0
+  Latest checkpoint's oldestXID: 717
+  Latest checkpoint's oldestXID's DB: 1
+  Latest checkpoint's oldestActiveXID: 0
+  Latest checkpoint's oldestMultiXid: 1
+  Latest checkpoint's oldestMulti's DB: 1
+  Latest checkpoint's oldestCommitTsXid: 0
+  Latest checkpoint's newestCommitTsXid: 0
+  Time of latest checkpoint: Fri Oct 30 00:33:22 2026
+  Fake LSN counter for unlogged rels: 0/3E8
+  Minimum recovery ending location: 0/60000A0
+  Min recovery ending loc's timeline: 3
+  Backup start location: 0/0
+  Backup end location: 0/0
+  End-of-backup record required: no
+  wal_level setting: replica
+  wal_log_hints setting: on
+  max_connections setting: 100
+  max_worker_processes setting: 8
+  max_wal_senders setting: 10
+  max_prepared_xacts setting: 0
+  max_locks_per_xact setting: 64
+  track_commit_timestamp setting: off
+  Maximum data alignment: 8
+  Database block size: 8192
+  Blocks per segment of large relation: 131072
+  WAL block size: 8192
+  Bytes per WAL segment: 16777216
+  Maximum length of identifiers: 64
+  Maximum columns in an index: 32
+  Maximum size of a TOAST chunk: 1996
+  Size of a large-object chunk: 2048
+  Date/time type storage: 64-bit integers
+  Float8 argument passing: by value
+  Data page checksum version: 0
+  Mock authentication nonce: 55079be318befb2bea7feb61ed3ee8176df94628e80a16754dbcf5e12a237329
+
+2026-10-30 00:36:15,612 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:36:15,612 INFO: starting as a secondary
+2026-10-30 00:36:15.788 GMT [620] LOG:  starting PostgreSQL 15.19 (Debian 15.19-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-10-30 00:36:15.788 GMT [620] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-10-30 00:36:15.790 GMT [620] FATAL:  lock file "./.s.PGSQL.5432.lock" is empty
+2026-10-30 00:36:15.790 GMT [620] HINT:  Either another server is starting, or the lock file is the remnant of a previous server startup crash.
+2026-10-30 00:36:15.790 GMT [620] LOG:  database system is shut down
+2026-10-30 00:36:15,792 INFO: postmaster pid=620
+2026-10-30 00:36:16,873 INFO: establishing a new patroni heartbeat connection to postgres
+2026-10-30 00:36:19,887 INFO: establishing a new patroni heartbeat connection to postgres
+2026-10-30 00:36:22,907 INFO: establishing a new patroni heartbeat connection to postgres
+localhost:5432 - no response
+2026-10-30 00:36:25,608 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:36:25,609 INFO: failed to start postgres
+2026-10-30 00:36:35,595 WARNING: Postgresql is not running.
+2026-10-30 00:36:35,595 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:36:35,598 INFO: pg_controldata:
+  pg_control version number: 1300
+  Catalog version number: 202209061
+  Database system identifier: 7702251532100730913
+  Database cluster state: shut down in recovery
+  pg_control last modified: Fri Oct 30 00:33:34 2026
+  Latest checkpoint location: 0/6000028
+  Latest checkpoint's REDO location: 0/6000028
+  Latest checkpoint's REDO WAL file: 000000030000000000000006
+  Latest checkpoint's TimeLineID: 3
+  Latest checkpoint's PrevTimeLineID: 3
+  Latest checkpoint's full_page_writes: on
+  Latest checkpoint's NextXID: 0:735
+  Latest checkpoint's NextOID: 16395
+  Latest checkpoint's NextMultiXactId: 1
+  Latest checkpoint's NextMultiOffset: 0
+  Latest checkpoint's oldestXID: 717
+  Latest checkpoint's oldestXID's DB: 1
+  Latest checkpoint's oldestActiveXID: 0
+  Latest checkpoint's oldestMultiXid: 1
+  Latest checkpoint's oldestMulti's DB: 1
+  Latest checkpoint's oldestCommitTsXid: 0
+  Latest checkpoint's newestCommitTsXid: 0
+  Time of latest checkpoint: Fri Oct 30 00:33:22 2026
+  Fake LSN counter for unlogged rels: 0/3E8
+  Minimum recovery ending location: 0/60000A0
+  Min recovery ending loc's timeline: 3
+  Backup start location: 0/0
+  Backup end location: 0/0
+  End-of-backup record required: no
+  wal_level setting: replica
+  wal_log_hints setting: on
+  max_connections setting: 100
+  max_worker_processes setting: 8
+  max_wal_senders setting: 10
+  max_prepared_xacts setting: 0
+  max_locks_per_xact setting: 64
+  track_commit_timestamp setting: off
+  Maximum data alignment: 8
+  Database block size: 8192
+  Blocks per segment of large relation: 131072
+  WAL block size: 8192
+  Bytes per WAL segment: 16777216
+  Maximum length of identifiers: 64
+  Maximum columns in an index: 32
+  Maximum size of a TOAST chunk: 1996
+  Size of a large-object chunk: 2048
+  Date/time type storage: 64-bit integers
+  Float8 argument passing: by value
+  Data page checksum version: 0
+  Mock authentication nonce: 55079be318befb2bea7feb61ed3ee8176df94628e80a16754dbcf5e12a237329
+
+2026-10-30 00:36:35,606 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:36:35,607 INFO: starting as a secondary
+2026-10-30 00:36:35.782 GMT [681] LOG:  starting PostgreSQL 15.19 (Debian 15.19-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-10-30 00:36:35.783 GMT [681] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-10-30 00:36:35.784 GMT [681] FATAL:  lock file "./.s.PGSQL.5432.lock" is empty
+2026-10-30 00:36:35.784 GMT [681] HINT:  Either another server is starting, or the lock file is the remnant of a previous server startup crash.
+2026-10-30 00:36:35.784 GMT [681] LOG:  database system is shut down
+2026-10-30 00:36:35,789 INFO: postmaster pid=681
+2026-10-30 00:36:37,971 INFO: establishing a new patroni heartbeat connection to postgres
+2026-10-30 00:36:40,982 INFO: establishing a new patroni heartbeat connection to postgres
+2026-10-30 00:36:43,994 INFO: establishing a new patroni heartbeat connection to postgres
+localhost:5432 - no response
+2026-10-30 00:36:45,607 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:36:45,607 INFO: failed to start postgres
+2026-10-30 00:36:55,599 WARNING: Postgresql is not running.
+2026-10-30 00:36:55,600 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:36:55,601 INFO: pg_controldata:
+  pg_control version number: 1300
+  Catalog version number: 202209061
+  Database system identifier: 7702251532100730913
+  Database cluster state: shut down in recovery
+  pg_control last modified: Fri Oct 30 00:33:34 2026
+  Latest checkpoint location: 0/6000028
+  Latest checkpoint's REDO location: 0/6000028
+  Latest checkpoint's REDO WAL file: 000000030000000000000006
+  Latest checkpoint's TimeLineID: 3
+  Latest checkpoint's PrevTimeLineID: 3
+  Latest checkpoint's full_page_writes: on
+  Latest checkpoint's NextXID: 0:735
+  Latest checkpoint's NextOID: 16395
+  Latest checkpoint's NextMultiXactId: 1
+  Latest checkpoint's NextMultiOffset: 0
+  Latest checkpoint's oldestXID: 717
+  Latest checkpoint's oldestXID's DB: 1
+  Latest checkpoint's oldestActiveXID: 0
+  Latest checkpoint's oldestMultiXid: 1
+  Latest checkpoint's oldestMulti's DB: 1
+  Latest checkpoint's oldestCommitTsXid: 0
+  Latest checkpoint's newestCommitTsXid: 0
+  Time of latest checkpoint: Fri Oct 30 00:33:22 2026
+  Fake LSN counter for unlogged rels: 0/3E8
+  Minimum recovery ending location: 0/60000A0
+  Min recovery ending loc's timeline: 3
+  Backup start location: 0/0
+  Backup end location: 0/0
+  End-of-backup record required: no
+  wal_level setting: replica
+  wal_log_hints setting: on
+  max_connections setting: 100
+  max_worker_processes setting: 8
+  max_wal_senders setting: 10
+  max_prepared_xacts setting: 0
+  max_locks_per_xact setting: 64
+  track_commit_timestamp setting: off
+  Maximum data alignment: 8
+  Database block size: 8192
+  Blocks per segment of large relation: 131072
+  WAL block size: 8192
+  Bytes per WAL segment: 16777216
+  Maximum length of identifiers: 64
+  Maximum columns in an index: 32
+  Maximum size of a TOAST chunk: 1996
+  Size of a large-object chunk: 2048
+  Date/time type storage: 64-bit integers
+  Float8 argument passing: by value
+  Data page checksum version: 0
+  Mock authentication nonce: 55079be318befb2bea7feb61ed3ee8176df94628e80a16754dbcf5e12a237329
+
+2026-10-30 00:36:55,608 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:36:55,608 INFO: starting as a secondary
+2026-10-30 00:36:55,787 INFO: postmaster pid=741
+2026-10-30 00:36:55.788 GMT [741] LOG:  starting PostgreSQL 15.19 (Debian 15.19-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-10-30 00:36:55.789 GMT [741] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-10-30 00:36:55.790 GMT [741] FATAL:  lock file "./.s.PGSQL.5432.lock" is empty
+2026-10-30 00:36:55.790 GMT [741] HINT:  Either another server is starting, or the lock file is the remnant of a previous server startup crash.
+2026-10-30 00:36:55.790 GMT [741] LOG:  database system is shut down
+localhost:5432 - no response
+2026-10-30 00:36:56,039 INFO: establishing a new patroni heartbeat connection to postgres
+2026-10-30 00:36:56,800 ERROR: postmaster is not running
+2026-10-30 00:37:05,599 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:37:05,599 INFO: failed to start postgres
+2026-10-30 00:37:15,603 WARNING: Postgresql is not running.
+2026-10-30 00:37:15,603 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:37:15,604 INFO: pg_controldata:
+  pg_control version number: 1300
+  Catalog version number: 202209061
+  Database system identifier: 7702251532100730913
+  Database cluster state: shut down in recovery
+  pg_control last modified: Fri Oct 30 00:33:34 2026
+  Latest checkpoint location: 0/6000028
+  Latest checkpoint's REDO location: 0/6000028
+  Latest checkpoint's REDO WAL file: 000000030000000000000006
+  Latest checkpoint's TimeLineID: 3
+  Latest checkpoint's PrevTimeLineID: 3
+  Latest checkpoint's full_page_writes: on
+  Latest checkpoint's NextXID: 0:735
+  Latest checkpoint's NextOID: 16395
+  Latest checkpoint's NextMultiXactId: 1
+  Latest checkpoint's NextMultiOffset: 0
+  Latest checkpoint's oldestXID: 717
+  Latest checkpoint's oldestXID's DB: 1
+  Latest checkpoint's oldestActiveXID: 0
+  Latest checkpoint's oldestMultiXid: 1
+  Latest checkpoint's oldestMulti's DB: 1
+  Latest checkpoint's oldestCommitTsXid: 0
+  Latest checkpoint's newestCommitTsXid: 0
+  Time of latest checkpoint: Fri Oct 30 00:33:22 2026
+  Fake LSN counter for unlogged rels: 0/3E8
+  Minimum recovery ending location: 0/60000A0
+  Min recovery ending loc's timeline: 3
+  Backup start location: 0/0
+  Backup end location: 0/0
+  End-of-backup record required: no
+  wal_level setting: replica
+  wal_log_hints setting: on
+  max_connections setting: 100
+  max_worker_processes setting: 8
+  max_wal_senders setting: 10
+  max_prepared_xacts setting: 0
+  max_locks_per_xact setting: 64
+  track_commit_timestamp setting: off
+  Maximum data alignment: 8
+  Database block size: 8192
+  Blocks per segment of large relation: 131072
+  WAL block size: 8192
+  Bytes per WAL segment: 16777216
+  Maximum length of identifiers: 64
+  Maximum columns in an index: 32
+  Maximum size of a TOAST chunk: 1996
+  Size of a large-object chunk: 2048
+  Date/time type storage: 64-bit integers
+  Float8 argument passing: by value
+  Data page checksum version: 0
+  Mock authentication nonce: 55079be318befb2bea7feb61ed3ee8176df94628e80a16754dbcf5e12a237329
+
+2026-10-30 00:37:15,610 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:37:15,611 INFO: starting as a secondary
+2026-10-30 00:37:15,790 INFO: postmaster pid=802
+localhost:5432 - no response
+2026-10-30 00:37:15.796 GMT [802] LOG:  starting PostgreSQL 15.19 (Debian 15.19-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-10-30 00:37:15.796 GMT [802] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-10-30 00:37:15.797 GMT [802] FATAL:  lock file "./.s.PGSQL.5432.lock" is empty
+2026-10-30 00:37:15.797 GMT [802] HINT:  Either another server is starting, or the lock file is the remnant of a previous server startup crash.
+2026-10-30 00:37:15.798 GMT [802] LOG:  database system is shut down
+2026-10-30 00:37:16,803 ERROR: postmaster is not running
+2026-10-30 00:37:25,600 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:37:25,601 INFO: failed to start postgres
+2026-10-30 00:37:35,600 WARNING: Postgresql is not running.
+2026-10-30 00:37:35,600 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:37:35,603 INFO: pg_controldata:
+  pg_control version number: 1300
+  Catalog version number: 202209061
+  Database system identifier: 7702251532100730913
+  Database cluster state: shut down in recovery
+  pg_control last modified: Fri Oct 30 00:33:34 2026
+  Latest checkpoint location: 0/6000028
+  Latest checkpoint's REDO location: 0/6000028
+  Latest checkpoint's REDO WAL file: 000000030000000000000006
+  Latest checkpoint's TimeLineID: 3
+  Latest checkpoint's PrevTimeLineID: 3
+  Latest checkpoint's full_page_writes: on
+  Latest checkpoint's NextXID: 0:735
+  Latest checkpoint's NextOID: 16395
+  Latest checkpoint's NextMultiXactId: 1
+  Latest checkpoint's NextMultiOffset: 0
+  Latest checkpoint's oldestXID: 717
+  Latest checkpoint's oldestXID's DB: 1
+  Latest checkpoint's oldestActiveXID: 0
+  Latest checkpoint's oldestMultiXid: 1
+  Latest checkpoint's oldestMulti's DB: 1
+  Latest checkpoint's oldestCommitTsXid: 0
+  Latest checkpoint's newestCommitTsXid: 0
+  Time of latest checkpoint: Fri Oct 30 00:33:22 2026
+  Fake LSN counter for unlogged rels: 0/3E8
+  Minimum recovery ending location: 0/60000A0
+  Min recovery ending loc's timeline: 3
+  Backup start location: 0/0
+  Backup end location: 0/0
+  End-of-backup record required: no
+  wal_level setting: replica
+  wal_log_hints setting: on
+  max_connections setting: 100
+  max_worker_processes setting: 8
+  max_wal_senders setting: 10
+  max_prepared_xacts setting: 0
+  max_locks_per_xact setting: 64
+  track_commit_timestamp setting: off
+  Maximum data alignment: 8
+  Database block size: 8192
+  Blocks per segment of large relation: 131072
+  WAL block size: 8192
+  Bytes per WAL segment: 16777216
+  Maximum length of identifiers: 64
+  Maximum columns in an index: 32
+  Maximum size of a TOAST chunk: 1996
+  Size of a large-object chunk: 2048
+  Date/time type storage: 64-bit integers
+  Float8 argument passing: by value
+  Data page checksum version: 0
+  Mock authentication nonce: 55079be318befb2bea7feb61ed3ee8176df94628e80a16754dbcf5e12a237329
+
+2026-10-30 00:37:35,608 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:37:35,609 INFO: starting as a secondary
+2026-10-30 00:37:35.789 GMT [863] LOG:  starting PostgreSQL 15.19 (Debian 15.19-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-10-30 00:37:35.789 GMT [863] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-10-30 00:37:35.791 GMT [863] FATAL:  lock file "./.s.PGSQL.5432.lock" is empty
+2026-10-30 00:37:35.791 GMT [863] HINT:  Either another server is starting, or the lock file is the remnant of a previous server startup crash.
+2026-10-30 00:37:35.792 GMT [863] LOG:  database system is shut down
+2026-10-30 00:37:35,793 INFO: postmaster pid=863
+2026-10-30 00:37:38,193 INFO: establishing a new patroni heartbeat connection to postgres
+2026-10-30 00:37:41,208 INFO: establishing a new patroni heartbeat connection to postgres
+2026-10-30 00:37:44,216 INFO: establishing a new patroni heartbeat connection to postgres
+localhost:5432 - no response
+2026-10-30 00:37:45,608 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:37:45,608 INFO: failed to start postgres
+2026-10-30 00:37:55,596 WARNING: Postgresql is not running.
+2026-10-30 00:37:55,596 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:37:55,598 INFO: pg_controldata:
+  pg_control version number: 1300
+  Catalog version number: 202209061
+  Database system identifier: 7702251532100730913
+  Database cluster state: shut down in recovery
+  pg_control last modified: Fri Oct 30 00:33:34 2026
+  Latest checkpoint location: 0/6000028
+  Latest checkpoint's REDO location: 0/6000028
+  Latest checkpoint's REDO WAL file: 000000030000000000000006
+  Latest checkpoint's TimeLineID: 3
+  Latest checkpoint's PrevTimeLineID: 3
+  Latest checkpoint's full_page_writes: on
+  Latest checkpoint's NextXID: 0:735
+  Latest checkpoint's NextOID: 16395
+  Latest checkpoint's NextMultiXactId: 1
+  Latest checkpoint's NextMultiOffset: 0
+  Latest checkpoint's oldestXID: 717
+  Latest checkpoint's oldestXID's DB: 1
+  Latest checkpoint's oldestActiveXID: 0
+  Latest checkpoint's oldestMultiXid: 1
+  Latest checkpoint's oldestMulti's DB: 1
+  Latest checkpoint's oldestCommitTsXid: 0
+  Latest checkpoint's newestCommitTsXid: 0
+  Time of latest checkpoint: Fri Oct 30 00:33:22 2026
+  Fake LSN counter for unlogged rels: 0/3E8
+  Minimum recovery ending location: 0/60000A0
+  Min recovery ending loc's timeline: 3
+  Backup start location: 0/0
+  Backup end location: 0/0
+  End-of-backup record required: no
+  wal_level setting: replica
+  wal_log_hints setting: on
+  max_connections setting: 100
+  max_worker_processes setting: 8
+  max_wal_senders setting: 10
+  max_prepared_xacts setting: 0
+  max_locks_per_xact setting: 64
+  track_commit_timestamp setting: off
+  Maximum data alignment: 8
+  Database block size: 8192
+  Blocks per segment of large relation: 131072
+  WAL block size: 8192
+  Bytes per WAL segment: 16777216
+  Maximum length of identifiers: 64
+  Maximum columns in an index: 32
+  Maximum size of a TOAST chunk: 1996
+  Size of a large-object chunk: 2048
+  Date/time type storage: 64-bit integers
+  Float8 argument passing: by value
+  Data page checksum version: 0
+  Mock authentication nonce: 55079be318befb2bea7feb61ed3ee8176df94628e80a16754dbcf5e12a237329
+
+2026-10-30 00:37:55,603 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:37:55,603 INFO: starting as a secondary
+2026-10-30 00:37:55,781 INFO: postmaster pid=923
+2026-10-30 00:37:55.783 GMT [923] LOG:  starting PostgreSQL 15.19 (Debian 15.19-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-10-30 00:37:55.783 GMT [923] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-10-30 00:37:55.784 GMT [923] FATAL:  lock file "./.s.PGSQL.5432.lock" is empty
+2026-10-30 00:37:55.784 GMT [923] HINT:  Either another server is starting, or the lock file is the remnant of a previous server startup crash.
+2026-10-30 00:37:55.785 GMT [923] LOG:  database system is shut down
+localhost:5432 - no response
+2026-10-30 00:37:56,279 INFO: establishing a new patroni heartbeat connection to postgres
+2026-10-30 00:37:56,795 ERROR: postmaster is not running
+2026-10-30 00:38:05,602 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:38:05,602 INFO: failed to start postgres
+2026-10-30 00:38:15,593 WARNING: Postgresql is not running.
+2026-10-30 00:38:15,593 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:38:15,594 INFO: pg_controldata:
+  pg_control version number: 1300
+  Catalog version number: 202209061
+  Database system identifier: 7702251532100730913
+  Database cluster state: shut down in recovery
+  pg_control last modified: Fri Oct 30 00:33:34 2026
+  Latest checkpoint location: 0/6000028
+  Latest checkpoint's REDO location: 0/6000028
+  Latest checkpoint's REDO WAL file: 000000030000000000000006
+  Latest checkpoint's TimeLineID: 3
+  Latest checkpoint's PrevTimeLineID: 3
+  Latest checkpoint's full_page_writes: on
+  Latest checkpoint's NextXID: 0:735
+  Latest checkpoint's NextOID: 16395
+  Latest checkpoint's NextMultiXactId: 1
+  Latest checkpoint's NextMultiOffset: 0
+  Latest checkpoint's oldestXID: 717
+  Latest checkpoint's oldestXID's DB: 1
+  Latest checkpoint's oldestActiveXID: 0
+  Latest checkpoint's oldestMultiXid: 1
+  Latest checkpoint's oldestMulti's DB: 1
+  Latest checkpoint's oldestCommitTsXid: 0
+  Latest checkpoint's newestCommitTsXid: 0
+  Time of latest checkpoint: Fri Oct 30 00:33:22 2026
+  Fake LSN counter for unlogged rels: 0/3E8
+  Minimum recovery ending location: 0/60000A0
+  Min recovery ending loc's timeline: 3
+  Backup start location: 0/0
+  Backup end location: 0/0
+  End-of-backup record required: no
+  wal_level setting: replica
+  wal_log_hints setting: on
+  max_connections setting: 100
+  max_worker_processes setting: 8
+  max_wal_senders setting: 10
+  max_prepared_xacts setting: 0
+  max_locks_per_xact setting: 64
+  track_commit_timestamp setting: off
+  Maximum data alignment: 8
+  Database block size: 8192
+  Blocks per segment of large relation: 131072
+  WAL block size: 8192
+  Bytes per WAL segment: 16777216
+  Maximum length of identifiers: 64
+  Maximum columns in an index: 32
+  Maximum size of a TOAST chunk: 1996
+  Size of a large-object chunk: 2048
+  Date/time type storage: 64-bit integers
+  Float8 argument passing: by value
+  Data page checksum version: 0
+  Mock authentication nonce: 55079be318befb2bea7feb61ed3ee8176df94628e80a16754dbcf5e12a237329
+
+2026-10-30 00:38:15,600 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:38:15,600 INFO: starting as a secondary
+2026-10-30 00:38:15,781 INFO: postmaster pid=984
+localhost:5432 - no response
+2026-10-30 00:38:15.784 GMT [984] LOG:  starting PostgreSQL 15.19 (Debian 15.19-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-10-30 00:38:15.784 GMT [984] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-10-30 00:38:15.785 GMT [984] FATAL:  lock file "./.s.PGSQL.5432.lock" is empty
+2026-10-30 00:38:15.785 GMT [984] HINT:  Either another server is starting, or the lock file is the remnant of a previous server startup crash.
+2026-10-30 00:38:15.786 GMT [984] LOG:  database system is shut down
+2026-10-30 00:38:16,795 ERROR: postmaster is not running
+2026-10-30 00:38:25,596 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:38:25,596 INFO: failed to start postgres
+2026-10-30 00:38:35,597 WARNING: Postgresql is not running.
+2026-10-30 00:38:35,597 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:38:35,598 INFO: pg_controldata:
+  pg_control version number: 1300
+  Catalog version number: 202209061
+  Database system identifier: 7702251532100730913
+  Database cluster state: shut down in recovery
+  pg_control last modified: Fri Oct 30 00:33:34 2026
+  Latest checkpoint location: 0/6000028
+  Latest checkpoint's REDO location: 0/6000028
+  Latest checkpoint's REDO WAL file: 000000030000000000000006
+  Latest checkpoint's TimeLineID: 3
+  Latest checkpoint's PrevTimeLineID: 3
+  Latest checkpoint's full_page_writes: on
+  Latest checkpoint's NextXID: 0:735
+  Latest checkpoint's NextOID: 16395
+  Latest checkpoint's NextMultiXactId: 1
+  Latest checkpoint's NextMultiOffset: 0
+  Latest checkpoint's oldestXID: 717
+  Latest checkpoint's oldestXID's DB: 1
+  Latest checkpoint's oldestActiveXID: 0
+  Latest checkpoint's oldestMultiXid: 1
+  Latest checkpoint's oldestMulti's DB: 1
+  Latest checkpoint's oldestCommitTsXid: 0
+  Latest checkpoint's newestCommitTsXid: 0
+  Time of latest checkpoint: Fri Oct 30 00:33:22 2026
+  Fake LSN counter for unlogged rels: 0/3E8
+  Minimum recovery ending location: 0/60000A0
+  Min recovery ending loc's timeline: 3
+  Backup start location: 0/0
+  Backup end location: 0/0
+  End-of-backup record required: no
+  wal_level setting: replica
+  wal_log_hints setting: on
+  max_connections setting: 100
+  max_worker_processes setting: 8
+  max_wal_senders setting: 10
+  max_prepared_xacts setting: 0
+  max_locks_per_xact setting: 64
+  track_commit_timestamp setting: off
+  Maximum data alignment: 8
+  Database block size: 8192
+  Blocks per segment of large relation: 131072
+  WAL block size: 8192
+  Bytes per WAL segment: 16777216
+  Maximum length of identifiers: 64
+  Maximum columns in an index: 32
+  Maximum size of a TOAST chunk: 1996
+  Size of a large-object chunk: 2048
+  Date/time type storage: 64-bit integers
+  Float8 argument passing: by value
+  Data page checksum version: 0
+  Mock authentication nonce: 55079be318befb2bea7feb61ed3ee8176df94628e80a16754dbcf5e12a237329
+
+2026-10-30 00:38:35,602 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:38:35,602 INFO: starting as a secondary
+2026-10-30 00:38:35,783 INFO: postmaster pid=1045
+2026-10-30 00:38:35.785 GMT [1045] LOG:  starting PostgreSQL 15.19 (Debian 15.19-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-10-30 00:38:35.785 GMT [1045] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-10-30 00:38:35.786 GMT [1045] FATAL:  lock file "./.s.PGSQL.5432.lock" is empty
+2026-10-30 00:38:35.786 GMT [1045] HINT:  Either another server is starting, or the lock file is the remnant of a previous server startup crash.
+2026-10-30 00:38:35.787 GMT [1045] LOG:  database system is shut down
+localhost:5432 - no response
+2026-10-30 00:38:36,790 ERROR: postmaster is not running
+2026-10-30 00:38:45,598 INFO: Lock owner: postgresql1; I am postgresql0
+2026-10-30 00:38:45,599 INFO: failed to start postgres

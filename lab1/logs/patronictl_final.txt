@@ -1,0 +1,6 @@
++ Cluster: my_cluster (7702251532100730913) -------+----+-------------+-----+------------+-----+
+| Member      | Host      | Role    | State        | TL | Receive LSN | Lag | Replay LSN | Lag |
++-------------+-----------+---------+--------------+----+-------------+-----+------------+-----+
+| postgresql0 | pg-master | Replica | start failed |    |     unknown |     |    unknown |     |
+| postgresql1 | pg-slave  | Leader  | running      |  4 |             |     |            |     |
++-------------+-----------+---------+--------------+----+-------------+-----+------------+-----+

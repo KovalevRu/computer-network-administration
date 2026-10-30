@@ -1,0 +1,90 @@
+2026-10-30 00:45:36,533 INFO: Using default value thread_stack_size = 524288
+2026-10-30 00:45:36,550 INFO: Patroni global thread_pool_size = 5
+2026-10-30 00:45:36,576 INFO: Connecting to zoo(192.168.117.3):2181, use_ssl: False
+2026-10-30 00:45:36,576 WARNING: Connection dropped: socket connection error: Connection refused
+2026-10-30 00:45:36,691 INFO: Connecting to zoo(192.168.117.3):2181, use_ssl: False
+2026-10-30 00:45:36,692 WARNING: Connection dropped: socket connection error: Connection refused
+2026-10-30 00:45:36,965 INFO: Connecting to zoo(192.168.117.3):2181, use_ssl: False
+2026-10-30 00:45:36,965 WARNING: Connection dropped: socket connection error: Connection refused
+2026-10-30 00:45:37,559 INFO: Connecting to zoo(192.168.117.3):2181, use_ssl: False
+2026-10-30 00:45:37,560 WARNING: Connection dropped: socket connection error: Connection refused
+2026-10-30 00:45:38,520 INFO: Connecting to zoo(192.168.117.3):2181, use_ssl: False
+2026-10-30 00:45:38,521 WARNING: Connection dropped: socket connection error: Connection refused
+2026-10-30 00:45:39,358 INFO: Connecting to zoo(192.168.117.3):2181, use_ssl: False
+2026-10-30 00:45:39,362 INFO: Zookeeper connection established, state: CONNECTED
+2026-10-30 00:45:39,369 INFO: No PostgreSQL configuration items changed, nothing to reload.
+2026-10-30 00:45:39,370 INFO: REST API thread_pool_size = 5
+2026-10-30 00:45:39,378 INFO: Lock owner: None; I am postgresql1
+2026-10-30 00:45:39,382 INFO: waiting for leader to bootstrap
+2026-10-30 00:45:49,391 INFO: Lock owner: postgresql0; I am postgresql1
+2026-10-30 00:45:49,392 INFO: trying to bootstrap from leader 'postgresql0'
+2026-10-30 00:45:50,706 INFO: replica has been created using basebackup
+2026-10-30 00:45:50,706 INFO: bootstrapped from leader 'postgresql0'
+2026-10-30 00:45:50.891 UTC [32] LOG:  starting PostgreSQL 15.19 (Debian 15.19-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+2026-10-30 00:45:50.891 UTC [32] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-10-30 00:45:50.894 UTC [32] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-10-30 00:45:50,894 INFO: postmaster pid=32
+2026-10-30 00:45:50.896 UTC [36] LOG:  database system was interrupted; last known up at 2026-10-30 00:45:49 UTC
+2026-10-30 00:45:50.897 UTC [37] FATAL:  the database system is starting up
+localhost:5432 - rejecting connections
+2026-10-30 00:45:50.901 UTC [39] FATAL:  the database system is starting up
+localhost:5432 - rejecting connections
+2026-10-30 00:45:50.901 UTC [36] LOG:  entering standby mode
+2026-10-30 00:45:50.901 UTC [36] LOG:  starting backup recovery with redo LSN 0/2000028, checkpoint LSN 0/2000060, on timeline ID 1
+2026-10-30 00:45:50.903 UTC [36] LOG:  redo starts at 0/2000028
+2026-10-30 00:45:50.904 UTC [36] LOG:  completed backup recovery with redo LSN 0/2000028 and end LSN 0/2000100
+2026-10-30 00:45:50.904 UTC [36] LOG:  consistent recovery state reached at 0/2000100
+2026-10-30 00:45:50.904 UTC [32] LOG:  database system is ready to accept read-only connections
+2026-10-30 00:45:50.912 UTC [41] LOG:  started streaming WAL from primary at 0/3000000 on timeline 1
+localhost:5432 - accepting connections
+2026-10-30 00:45:51,937 INFO: Lock owner: postgresql0; I am postgresql1
+2026-10-30 00:45:51,938 INFO: establishing a new patroni heartbeat connection to postgres
+2026-10-30 00:45:51,980 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
+2026-10-30 00:45:52,967 INFO: establishing a new patroni restapi connection to postgres
+2026-10-30 00:46:01,956 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
+2026-10-30 00:46:05.190 UTC [41] FATAL:  could not receive data from WAL stream: server closed the connection unexpectedly
+		This probably means the server terminated abnormally
+		before or while processing the request.
+2026-10-30 00:46:05.191 UTC [36] LOG:  invalid record length at 0/302F348: wanted 24, got 0
+2026-10-30 00:46:05.196 UTC [48] FATAL:  could not connect to the primary server: connection to server at "pg-master" (192.168.117.2), port 5432 failed: Connection refused
+		Is the server running on that host and accepting TCP/IP connections?
+2026-10-30 00:46:05.197 UTC [36] LOG:  waiting for WAL to become available at 0/302F360
+2026-10-30 00:46:10.210 UTC [85] FATAL:  could not connect to the primary server: could not translate host name "pg-master" to address: Name or service not known
+2026-10-30 00:46:10.210 UTC [36] LOG:  waiting for WAL to become available at 0/302F360
+2026-10-30 00:46:11,949 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
+2026-10-30 00:46:15.214 UTC [122] FATAL:  could not connect to the primary server: could not translate host name "pg-master" to address: Name or service not known
+2026-10-30 00:46:15.214 UTC [36] LOG:  waiting for WAL to become available at 0/302F360
+2026-10-30 00:46:20.223 UTC [159] FATAL:  could not connect to the primary server: could not translate host name "pg-master" to address: Name or service not known
+2026-10-30 00:46:20.223 UTC [36] LOG:  waiting for WAL to become available at 0/302F360
+2026-10-30 00:46:21,998 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
+2026-10-30 00:46:25.231 UTC [196] FATAL:  could not connect to the primary server: could not translate host name "pg-master" to address: Name or service not known
+2026-10-30 00:46:25.231 UTC [36] LOG:  waiting for WAL to become available at 0/302F360
+2026-10-30 00:46:30.234 UTC [224] FATAL:  could not connect to the primary server: could not translate host name "pg-master" to address: Name or service not known
+2026-10-30 00:46:30.234 UTC [36] LOG:  waiting for WAL to become available at 0/302F360
+2026-10-30 00:46:31,950 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
+2026-10-30 00:46:32,833 WARNING: Request failed to postgresql0: GET http://pg-master:8008/patroni (HTTPConnectionPool(host='pg-master', port=8008): Max retries exceeded with url: /patroni (Caused by NameResolutionError("HTTPConnection(host='pg-master', port=8008): Failed to resolve 'pg-master' ([Errno -2] Name or service not known)")))
+2026-10-30 00:46:32,852 INFO: promoted self to leader by acquiring session lock
+server promoting
+2026-10-30 00:46:32.854 UTC [36] LOG:  received promote request
+2026-10-30 00:46:32.854 UTC [36] LOG:  redo done at 0/302F320 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 41.95 s
+2026-10-30 00:46:32.855 UTC [36] LOG:  last completed transaction was at log time 2026-10-30 00:46:03.175338+00
+2026-10-30 00:46:32.855 UTC [36] LOG:  selected new timeline ID: 2
+2026-10-30 00:46:32.897 UTC [36] LOG:  archive recovery complete
+2026-10-30 00:46:32.905 UTC [34] LOG:  checkpoint starting: force
+2026-10-30 00:46:32.907 UTC [32] LOG:  database system is ready to accept connections
+2026-10-30 00:46:33,897 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:46:33.944 UTC [34] LOG:  checkpoint complete: wrote 56 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.978 s, sync=0.053 s, total=1.040 s; sync files=43, longest=0.003 s, average=0.002 s; distance=16572 kB, estimate=16572 kB
+2026-10-30 00:46:33.944 UTC [34] LOG:  checkpoint starting: immediate force wait
+2026-10-30 00:46:33.950 UTC [34] LOG:  checkpoint complete: wrote 1 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.007 s; sync files=1, longest=0.001 s, average=0.001 s; distance=1 kB, estimate=14915 kB
+2026-10-30 00:46:33,961 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:46:43,990 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:46:53,971 INFO: Lock owner: postgresql1; I am postgresql1
+2026-10-30 00:46:53,986 INFO: Assigning synchronous standby status to ['postgresql0']
+2026-10-30 00:46:53.990 UTC [32] LOG:  received SIGHUP, reloading configuration files
+server signaled
+2026-10-30 00:46:53.992 UTC [32] LOG:  parameter "synchronous_standby_names" changed to "postgresql0"
+2026-10-30 00:46:54.198 UTC [281] LOG:  standby "postgresql0" is now a synchronous standby with priority 1
+2026-10-30 00:46:54.198 UTC [281] STATEMENT:  START_REPLICATION SLOT "postgresql0" 0/3000000 TIMELINE 2
+2026-10-30 00:46:56,126 INFO: Synchronous standby status assigned to ['postgresql0']
+2026-10-30 00:46:56,132 INFO: no action. I am (postgresql1), the leader with the lock
+2026-10-30 00:47:03,984 INFO: no action. I am (postgresql1), the leader with the lock
