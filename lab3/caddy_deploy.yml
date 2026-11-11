@@ -1,0 +1,6 @@
+---
+- name: Install and configure Caddy webserver
+  hosts: my_servers
+  connection: local
+  roles:
+    - caddy_deploy

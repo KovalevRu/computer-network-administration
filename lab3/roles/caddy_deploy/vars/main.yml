@@ -1,0 +1,9 @@
+---
+# vars file for caddy_deploy
+domain_name: lab3.127.0.0.1.nip.io
+web_root: /var/www/html
+custom_header: "Ansible"
+
+log:
+  file: /var/log/caddy/caddy_access.log
+  level: "INFO"

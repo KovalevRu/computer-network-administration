@@ -1,0 +1,2 @@
+[my_servers]
+local_server ansible_host=localhost

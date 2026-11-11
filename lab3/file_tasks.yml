@@ -1,0 +1,37 @@
+---
+- name: Create, modify and remove test file
+  hosts: my_servers
+  connection: local
+  tasks:
+    - name: Create test file with initial content
+      copy:
+        dest: "{{ ansible_env.HOME }}/test.txt"
+        content: "test_file_content\n"
+
+    - name: Read initial file content
+      command: "cat {{ ansible_env.HOME }}/test.txt"
+      register: initial_content
+      changed_when: false
+
+    - name: Show initial file content
+      debug:
+        var: initial_content.stdout
+
+    - name: Modify file content before deletion
+      copy:
+        dest: "{{ ansible_env.HOME }}/test.txt"
+        content: "updated_file_content_lab3\n"
+
+    - name: Read modified file content
+      command: "cat {{ ansible_env.HOME }}/test.txt"
+      register: updated_content
+      changed_when: false
+
+    - name: Show modified file content
+      debug:
+        var: updated_content.stdout
+
+    - name: Delete test file
+      file:
+        path: "{{ ansible_env.HOME }}/test.txt"
+        state: absent

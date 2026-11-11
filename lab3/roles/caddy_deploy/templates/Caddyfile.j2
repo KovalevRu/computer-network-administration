@@ -1,0 +1,16 @@
+{{ domain_name }} {
+    tls internal
+    root * {{ web_root }}
+    file_server
+
+    header {
+        X-Deployed-By "{{ custom_header }}"
+        X-Lab-Number "3"
+    }
+
+    log {
+        output file {{ log.file }}
+        format json
+        level {{ log.level }}
+    }
+}
